@@ -1,0 +1,8 @@
+# Raw source footage/covers you upload for me to process — never actually
+# referenced by the live site (only the processed files in assets/video/hero
+# and assets/video/portfolio are), so no need to version or deploy these.
+assets/video/incoming/
+assets/video/covers/incoming/
+
+# OS cruft
+.DS_Store

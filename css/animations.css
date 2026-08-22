@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Animations — page-load fade, reveal targets driven by motion.js (GSAP).
+   Scroll reveals are applied entirely in JS via gsap.from(), so elements are
+   visible-by-default in markup/CSS: if JS or the GSAP CDN fails, content
+   simply renders in its final state instead of staying hidden.
+   ========================================================================== */
+
+html.js body {
+  opacity: 0;
+}
+
+html.js.is-loaded body {
+  opacity: 1;
+  transition: opacity 500ms var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js body {
+    opacity: 1;
+    transition: none;
+  }
+}

@@ -1,0 +1,395 @@
+/* ==========================================================================
+   Layout — container, section rhythm, nav, mobile menu, footer
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+.section {
+  padding-block: var(--section-pad);
+  border-top: 1px solid var(--border);
+}
+
+.section--flush {
+  border-top: 0;
+}
+
+.section__head {
+  max-width: 46rem;
+  margin-bottom: var(--space-10);
+}
+
+.section__head--wide {
+  max-width: 62rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: var(--accent);
+  flex: none;
+}
+
+.section__title {
+  font-size: var(--text-h2);
+  max-width: 22ch;
+}
+
+.section__intro {
+  margin-top: var(--space-5);
+  font-size: var(--text-lead);
+  color: var(--text-secondary);
+  max-width: 54ch;
+}
+
+/* ---------------------------------- Nav ---------------------------------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: rgba(10, 10, 11, 0.7);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out);
+}
+
+.nav[data-scrolled="true"] {
+  border-bottom-color: var(--border);
+  background: rgba(10, 10, 11, 0.92);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  height: 80px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.nav__logo img {
+  height: 34px;
+  width: auto;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.nav__logo:hover img,
+.nav__logo:focus-visible img {
+  opacity: 0.8;
+}
+
+.nav__links {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: var(--text-small);
+  font-weight: 500;
+}
+
+.nav__links a {
+  position: relative;
+  color: var(--text-secondary);
+  padding-block: var(--space-2);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: right var(--dur-base) var(--ease-out);
+}
+
+.nav__links a:hover,
+.nav__links a:focus-visible {
+  color: var(--text-primary);
+}
+
+.nav__links a:hover::after,
+.nav__links a:focus-visible::after {
+  right: 0;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-1);
+  min-height: 32px;
+}
+
+.lang-toggle__opt {
+  padding: 3px var(--space-2);
+  border-radius: 2px;
+  color: var(--text-tertiary);
+  transition: color var(--dur-fast), background var(--dur-fast);
+  min-width: 30px;
+  text-align: center;
+}
+
+.lang-toggle__opt:hover,
+.lang-toggle__opt:focus-visible {
+  color: var(--text-primary);
+}
+
+.lang-toggle__opt[aria-pressed="true"] {
+  color: var(--text-on-accent);
+  background: var(--text-primary);
+}
+
+.lang-toggle__opt[aria-pressed="true"]:hover {
+  color: var(--text-on-accent);
+}
+
+.nav__actions .nav__cta {
+  display: none;
+}
+
+.nav__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.nav__burger:hover,
+.nav__burger:focus-visible {
+  opacity: 0.65;
+}
+
+.nav__burger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--text-primary);
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out);
+}
+
+.nav__burger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav__burger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__burger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (min-width: 960px) {
+  .nav__links {
+    display: flex;
+  }
+
+  .nav__actions .nav__cta {
+    display: inline-flex;
+  }
+
+  .nav__burger {
+    display: none;
+  }
+}
+
+/* Mobile menu: sibling of <header>, NOT nested — an ancestor using
+   backdrop-filter creates a new containing block for fixed descendants,
+   which breaks position:fixed positioning/opacity. Keeping this element
+   outside the blurred header avoids that entirely. */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-mobile-menu);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--container-pad) var(--space-10);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform var(--dur-slow) var(--ease-in-out), opacity var(--dur-base) var(--ease-out), visibility 0s linear var(--dur-slow);
+}
+
+.mobile-menu[data-open="true"] {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform var(--dur-slow) var(--ease-in-out), opacity var(--dur-base) var(--ease-out), visibility 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu {
+    transition: opacity var(--dur-fast) linear, visibility 0s linear var(--dur-fast);
+  }
+  .mobile-menu[data-open="true"] {
+    transition: opacity var(--dur-fast) linear, visibility 0s;
+  }
+}
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  flex: none;
+}
+
+.mobile-menu__close {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.mobile-menu__close:hover,
+.mobile-menu__close:focus-visible {
+  color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-8);
+  gap: var(--space-1);
+}
+
+.mobile-menu__links a {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  font-weight: 600;
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: color var(--dur-fast) var(--ease-out), padding-left var(--dur-base) var(--ease-out);
+}
+
+.mobile-menu__links a:hover,
+.mobile-menu__links a:focus-visible {
+  color: var(--accent);
+  padding-left: var(--space-3);
+}
+
+.mobile-menu__footer {
+  margin-top: auto;
+  padding-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+@media (min-width: 960px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* --------------------------------- Footer -------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--space-8);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.footer__logo img {
+  height: 22px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.footer__logo:hover img,
+.footer__logo:focus-visible img {
+  opacity: 1;
+}
+
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+}
+
+.footer__links a {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__links a:hover,
+.footer__links a:focus-visible {
+  color: var(--text-primary);
+}
+
+.footer__meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--text-tertiary);
+  letter-spacing: var(--tracking-wide);
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://craft-frame-media.com/sitemap.xml

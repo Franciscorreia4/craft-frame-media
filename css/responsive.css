@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Responsive — mobile-first overrides at 640 / 768 / 1024 / 1280
+   ========================================================================== */
+
+/* ~640px — small tablets / large phones */
+@media (min-width: 640px) {
+  .hero__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero__stats .stat {
+    padding-left: var(--space-6);
+    border-left: 1px solid var(--border);
+  }
+
+  .hero__stats .stat:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .footer__row {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ~768px — tablets */
+@media (min-width: 768px) {
+  .services__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trusted__grid {
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .p-card__title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ~1024px — desktop: portfolio switches to the mixed collage grid.
+   Column spans are driven by each card's real aspect ratio rather than an
+   arbitrary "featured" flag — narrow vertical reels sit 4-up, moderately
+   wide (5:4) cards sit 2-up, and full widescreen (16:9) pieces run as a
+   full-bleed cinematic banner. Spans are chosen so full rows (12 cols)
+   land exactly on the current festivals/corporate card counts; align-items
+   start keeps every card at its own aspect-ratio height instead of being
+   stretched to match a taller neighbor in the same row. grid-auto-flow:
+   dense is a safety net for whenever the real footage changes an
+   orientation and the totals stop lining up perfectly. */
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    align-items: start;
+    gap: var(--space-6);
+  }
+
+  .portfolio-grid .p-card--v {
+    grid-column: span 4;
+  }
+
+  .portfolio-grid .p-card--h54 {
+    grid-column: span 6;
+  }
+
+  .portfolio-grid .p-card--h169 {
+    grid-column: span 12;
+  }
+
+  /* Festivals mixes 5:4 and vertical cards — narrower vertical span (2, not
+     the corporate default of 4) is what makes 3 h54 + 3 vertical cards tile
+     into two exact 12-column rows with the current line-up. Revisit if the
+     mix of orientations changes once real footage replaces the placeholders. */
+  .portfolio-grid[data-video-group="festivals"] .p-card--v {
+    grid-column: span 2;
+  }
+}
+
+/* ~1280px — wide desktop refinements */
+@media (min-width: 1280px) {
+  .hero__title {
+    max-width: 17ch;
+  }
+}

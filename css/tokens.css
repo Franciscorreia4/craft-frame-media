@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Craft Frame Media — Design Tokens
+   Palette: deep obsidian + warm off-white + one spot red, cinema-leader energy.
+   Type: Bricolage Grotesque (display) / Inter (body) / JetBrains Mono (utility).
+   ========================================================================== */
+
+:root {
+  /* ---- Color: surfaces ---- */
+  --bg: #0a0a0b;
+  --bg-raised: #121214;
+  --bg-card: #101012;
+  --bg-card-hover: #16161a;
+  --bg-overlay: rgba(10, 10, 11, 0.86);
+
+  /* ---- Color: borders / hairlines ---- */
+  --border: #232327;
+  --border-strong: #323238;
+  --border-accent: rgba(255, 59, 44, 0.4);
+
+  /* ---- Color: text ---- */
+  --text-primary: #f3f0ea;
+  --text-secondary: #9d9b98;
+  --text-tertiary: #656361;
+  --text-on-accent: #0a0a0b;
+
+  /* ---- Color: accent (spot color — never a fill/background) ---- */
+  --accent: #ff3b2c;
+  --accent-dim: #c92e21;
+  --accent-glow: rgba(255, 59, 44, 0.28);
+
+  /* ---- Color: portfolio card glow variants (rotate per card) ---- */
+  --glow-a: radial-gradient(120% 120% at 20% 15%, rgba(255, 92, 47, 0.32), transparent 60%);
+  --glow-b: radial-gradient(120% 120% at 80% 10%, rgba(214, 51, 214, 0.24), transparent 60%);
+  --glow-c: radial-gradient(120% 120% at 15% 85%, rgba(90, 90, 255, 0.26), transparent 60%);
+  --glow-d: radial-gradient(120% 120% at 85% 80%, rgba(255, 138, 46, 0.24), transparent 60%);
+  --glow-e: radial-gradient(120% 120% at 50% 100%, rgba(160, 70, 255, 0.24), transparent 60%);
+
+  /* ---- Typography ---- */
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-hero: clamp(2.5rem, 1.18rem + 5.63vw, 6.75rem);
+  --text-h2: clamp(1.8rem, 1.25rem + 2.4vw, 3.75rem);
+  --text-h3: clamp(1.4rem, 1.2rem + 0.9vw, 1.9rem);
+  --text-lead: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-micro: 0.75rem;
+  --text-stat: clamp(2.25rem, 1.7rem + 2vw, 3.5rem);
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-normal: 1.6;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-widest: 0.14em;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5rem;
+  --space-16: 7rem;
+  --section-pad: clamp(4rem, 3rem + 5vw, 9rem);
+
+  /* ---- Layout ---- */
+  --container-max: 1400px;
+  --container-pad: clamp(1.25rem, 4vw, 3rem);
+
+  /* ---- Radius (subtle, never pill) ---- */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 300ms;
+  --dur-slow: 600ms;
+
+  /* ---- Z-index ---- */
+  --z-nav: 100;
+  --z-mobile-menu: 200;
+  --z-grain: 300;
+}

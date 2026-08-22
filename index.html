@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-i18n="meta.title">Craft Frame Media — Video Production for Festivals &amp; Corporate Events | Warsaw &amp; Lisbon</title>
+<meta name="description" data-i18n="meta.description" content="Craft Frame Media is a video production company based in Warsaw and Lisbon, specializing in electronic music festival aftermovies and corporate event films." />
+<meta name="theme-color" content="#0a0a0b" />
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+<link rel="canonical" href="https://craft-frame-media.com/" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Craft Frame Media" />
+<meta property="og:url" content="https://craft-frame-media.com/" />
+<meta property="og:title" data-i18n="meta.title" content="Craft Frame Media — Video Production for Festivals &amp; Corporate Events | Warsaw &amp; Lisbon" />
+<meta property="og:description" data-i18n="meta.description" content="Craft Frame Media is a video production company based in Warsaw and Lisbon, specializing in electronic music festival aftermovies and corporate event films." />
+<meta property="og:image" content="https://craft-frame-media.com/assets/icons/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Craft Frame Media — Warsaw · Lisbon — Video & Photography" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pl_PL" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" data-i18n="meta.title" content="Craft Frame Media — Video Production for Festivals &amp; Corporate Events | Warsaw &amp; Lisbon" />
+<meta name="twitter:description" data-i18n="meta.description" content="Craft Frame Media is a video production company based in Warsaw and Lisbon, specializing in electronic music festival aftermovies and corporate event films." />
+<meta name="twitter:image" content="https://craft-frame-media.com/assets/icons/og-image.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Craft Frame Media",
+  "url": "https://craft-frame-media.com/",
+  "logo": "https://craft-frame-media.com/assets/logo/cfm-wordmark-white@2x.png",
+  "image": "https://craft-frame-media.com/assets/icons/og-image.png",
+  "description": "Video and photography production for electronic music festivals and corporate brand events, based in Warsaw and Lisbon.",
+  "email": "hello@craftframe-media.com",
+  "areaServed": [
+    { "@type": "City", "name": "Warsaw" },
+    { "@type": "City", "name": "Lisbon" }
+  ],
+  "sameAs": [
+    "https://instagram.com/craft.frame.media"
+  ]
+}
+</script>
+
+<link rel="preload" as="image" href="assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/tokens.css?v=20260822c" />
+<link rel="stylesheet" href="css/base.css?v=20260822c" />
+<link rel="stylesheet" href="css/layout.css?v=20260822c" />
+<link rel="stylesheet" href="css/components.css?v=20260822c" />
+<link rel="stylesheet" href="css/responsive.css?v=20260822c" />
+<link rel="stylesheet" href="css/animations.css?v=20260822c" />
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav" id="site-nav">
+  <div class="container nav__inner">
+    <a href="#top" class="nav__logo" aria-label="Craft Frame Media — home">
+      <img src="assets/logo/cfm-wordmark-white.png" srcset="assets/logo/cfm-wordmark-white.png 600w, assets/logo/cfm-wordmark-white@2x.png 1200w" sizes="140px" alt="Craft Frame Media" width="600" height="205" />
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#festivals" data-i18n="nav.festivals">Festivals</a>
+      <a href="#corporate" data-i18n="nav.corporate">Events / Corporate</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-toggle__opt" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-toggle__opt" data-lang-btn="pl" aria-pressed="false">PL</button>
+      </div>
+      <a href="#contact" class="btn btn--primary btn--sm nav__cta" data-i18n="nav.cta">Let's talk</a>
+      <button type="button" class="nav__burger" id="burger-open" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" data-open="false">
+  <div class="container mobile-menu__top">
+    <a href="#top" class="nav__logo" aria-label="Craft Frame Media — home">
+      <img src="assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media" width="600" height="205" style="height:26px;width:auto;" />
+    </a>
+    <button type="button" class="mobile-menu__close" id="burger-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="container mobile-menu__links" aria-label="Mobile primary">
+    <a href="#festivals" data-i18n="nav.festivals">Festivals</a>
+    <a href="#corporate" data-i18n="nav.corporate">Events / Corporate</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="container mobile-menu__footer">
+    <a href="#contact" class="btn btn--primary" data-i18n="nav.cta">Let's talk</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" class="lang-toggle__opt" data-lang-btn="en" aria-pressed="true">EN</button>
+      <button type="button" class="lang-toggle__opt" data-lang-btn="pl" aria-pressed="false">PL</button>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__gallery" id="hero-gallery">
+        <video class="hero__slide is-active" muted loop playsinline preload="auto" poster="assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" src="assets/video/hero/01-upperground.mp4"></video>
+        <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/01-messalka-wpp-media.jpg" data-src="assets/video/hero/02-wpp-media.mp4"></video>
+        <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/02-our-affairs-lisbon-2026.jpg" data-src="assets/video/hero/03-our-affairs.mp4"></video>
+        <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/06-dagence-esabor-bentley-summer.jpg" data-src="assets/video/hero/04-dagence.mp4"></video>
+        <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/05-surround-pl-stephan-bodzin-warsaw-2025.jpg" data-src="assets/video/hero/05-stephan-bodzin.mp4"></video>
+        <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/05-smith-nephew-summer-2025.jpg" data-src="assets/video/hero/06-smith-nephew.mp4"></video>
+      </div>
+      <div class="hero__scrim"></div>
+      <div class="hero__glow"></div>
+    </div>
+    <div class="hero__frame" aria-hidden="true">
+      <div class="frame-marks frame-marks--active"><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="hero__readout mono" aria-hidden="true">
+      <span class="rec-dot"></span>
+      <span>REC</span>
+      <span id="timecode">00:00:00:00</span>
+    </div>
+
+    <div class="hero__gallery-controls">
+      <button type="button" class="hero__next" id="hero-next" aria-label="Next background clip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="hero__dots" role="tablist" aria-label="Background clip selector">
+        <button type="button" class="hero__dot is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Clip 1 of 6"></button>
+        <button type="button" class="hero__dot" data-slide="1" role="tab" aria-selected="false" aria-label="Clip 2 of 6"></button>
+        <button type="button" class="hero__dot" data-slide="2" role="tab" aria-selected="false" aria-label="Clip 3 of 6"></button>
+        <button type="button" class="hero__dot" data-slide="3" role="tab" aria-selected="false" aria-label="Clip 4 of 6"></button>
+        <button type="button" class="hero__dot" data-slide="4" role="tab" aria-selected="false" aria-label="Clip 5 of 6"></button>
+        <button type="button" class="hero__dot" data-slide="5" role="tab" aria-selected="false" aria-label="Clip 6 of 6"></button>
+      </div>
+    </div>
+
+    <div class="container hero__inner">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Warsaw · Lisbon — Video &amp; Photography</p>
+      <h1 class="hero__title" data-i18n-html="hero.headline">Aftermovies, reels &amp; event films that actually <em>get watched.</em></h1>
+      <p class="hero__subtext" data-i18n="hero.subtext">We deliver video and photography solutions for events and brands worldwide — based in Warsaw and Lisbon.</p>
+      <div class="hero__ctas">
+        <a href="#festivals" class="btn btn--primary" data-i18n="hero.cta1">See the work</a>
+        <a href="#contact" class="btn btn--outline" data-i18n="hero.cta2">Start a project</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat stat--text">
+          <p class="stat__value" data-i18n="hero.stat1.value">Based in Warsaw &amp; Lisbon</p>
+          <p class="stat__label" data-i18n="hero.stat1.label">Working worldwide</p>
+        </div>
+        <div class="stat">
+          <p class="stat__value mono">200+</p>
+          <p class="stat__label" data-i18n="hero.stat2.label">Events covered</p>
+        </div>
+        <div class="stat">
+          <p class="stat__value mono">1000+</p>
+          <p class="stat__label" data-i18n="hero.stat3.label">Content delivered</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ABOUT ============================== -->
+  <section class="section" id="about">
+    <div class="container about__grid">
+      <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+      <h2 class="section__title" data-i18n="about.headline">Two scenes. One standard.</h2>
+      <p class="about__body" data-i18n-html="about.body"><strong>Craft Frame Media</strong> creates video and photography for events and brands that refuse to look ordinary. Based in Warsaw and Lisbon, working worldwide — we bring a creative eye and a professional process to every shoot, from festival main stages to corporate &amp; brand events.</p>
+
+      <div class="about__locations">
+        <div class="location">
+          <p class="location__city" data-i18n="about.loc1.city">Warsaw</p>
+        </div>
+        <div class="location">
+          <p class="location__city" data-i18n="about.loc2.city">Lisbon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SERVICES ============================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section__head section__head--wide">
+        <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+        <h2 class="section__title" data-i18n="services.headline">What we deliver</h2>
+        <p class="section__intro" data-i18n="services.intro">Every deliverable is scoped to how it'll actually be used — a 60-second aftermovie for Instagram plays by different rules than a 5-minute recap for a board deck.</p>
+      </div>
+
+      <div class="services__grid">
+        <div class="service-col">
+          <h3 class="service-col__title" data-i18n="services.col1.title">Festivals &amp; Electronic Music</h3>
+          <ul class="service-col__list">
+            <li data-i18n="services.col1.item1">Aftermovies</li>
+            <li data-i18n="services.col1.item2">Artist &amp; DJ highlight reels</li>
+            <li data-i18n="services.col1.item3">Live multi-cam event coverage</li>
+            <li data-i18n="services.col1.item4">Same-day edits</li>
+            <li data-i18n="services.col1.item5">Social &amp; Reels content</li>
+            <li data-i18n="services.col1.item6">Backstage &amp; artist content</li>
+          </ul>
+        </div>
+        <div class="service-col">
+          <h3 class="service-col__title" data-i18n="services.col2.title">Corporate &amp; Brand</h3>
+          <ul class="service-col__list">
+            <li data-i18n="services.col2.item1">Conference &amp; event recap films</li>
+            <li data-i18n="services.col2.item2">Brand activation content</li>
+            <li data-i18n="services.col2.item3">Corporate interviews &amp; testimonials</li>
+            <li data-i18n="services.col2.item4">Campaign &amp; product videos</li>
+            <li data-i18n="services.col2.item5">Social content for brand channels</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FESTIVALS PORTFOLIO ============================== -->
+  <section class="section" id="festivals">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="festivals.eyebrow">Selected work — 01</p>
+        <h2 class="section__title" data-i18n="festivals.headline">Festivals &amp; Electronic Music</h2>
+        <p class="section__intro" data-i18n="festivals.intro">Aftermovies, DJ highlights, multicam productions and live coverage from festivals and nightclubs around the world. Every card opens the full piece on Instagram.</p>
+      </div>
+
+      <div class="portfolio-grid" data-video-group="festivals">
+        <a class="p-card p-card--h54 p-card--glow-a" data-video-slot="festivals/01-upperground-poland-2026" href="https://instagram.com/reel/DZ7JbQ6N3LW" target="_blank" rel="noopener noreferrer" aria-label="Upperground Poland 2026 — Aftermovie — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" data-src="assets/video/portfolio/festivals/01-upperground-poland-2026.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">01</span>
+            <span>
+              <span class="p-card__title">Upperground Poland 2026</span>
+              <span class="p-card__caption">Aftermovie</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--h54 p-card--glow-c" data-video-slot="festivals/02-our-affairs-lisbon-2026" href="https://instagram.com/reel/DaihfidzDZ7" target="_blank" rel="noopener noreferrer" aria-label="Our Affairs Lisbon 2026 — Aftermovie — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/02-our-affairs-lisbon-2026.jpg" data-src="assets/video/portfolio/festivals/02-our-affairs-lisbon-2026.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">02</span>
+            <span>
+              <span class="p-card__title">Our Affairs Lisbon 2026</span>
+              <span class="p-card__caption">Aftermovie</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--v p-card--glow-b" data-video-slot="festivals/03-ultra-resistance-warsaw-2025" href="https://instagram.com/reel/DRCoWOkDJBR" target="_blank" rel="noopener noreferrer" aria-label="Ultra Resistance Warsaw 2025 — Aftermovie — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/03-ultra-resistance-warsaw-2025.jpg" data-src="assets/video/portfolio/festivals/03-ultra-resistance-warsaw-2025.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">03</span>
+            <span>
+              <span class="p-card__title">Ultra Resistance Warsaw 2025</span>
+              <span class="p-card__caption">Aftermovie</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--v p-card--glow-d" data-video-slot="festivals/04-adam-beyer-warsaw-2025" href="https://instagram.com/reel/DSSex37DMa_" target="_blank" rel="noopener noreferrer" aria-label="Adam Beyer — Warsaw 2025 — Recap reel — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/04-adam-beyer-warsaw-2025.jpg" data-src="assets/video/portfolio/festivals/04-adam-beyer-warsaw-2025.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">04</span>
+            <span>
+              <span class="p-card__title">Adam Beyer — Warsaw 2025</span>
+              <span class="p-card__caption">Recap reel</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--h54 p-card--glow-e" data-video-slot="festivals/05-surround-pl-stephan-bodzin-warsaw-2025" href="https://instagram.com/reel/DY4_tQ8THif" target="_blank" rel="noopener noreferrer" aria-label="Surround PL — Stephan Bodzin — Warsaw 2025 — Aftermovie — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/05-surround-pl-stephan-bodzin-warsaw-2025.jpg" data-src="assets/video/portfolio/festivals/05-surround-pl-stephan-bodzin-warsaw-2025.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">05</span>
+            <span>
+              <span class="p-card__title">Surround PL — Stephan Bodzin — Warsaw 2025</span>
+              <span class="p-card__caption">Aftermovie</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--v p-card--glow-a" data-video-slot="festivals/06-redcups-global" href="https://instagram.com/reel/DTvh_K5CNLa" target="_blank" rel="noopener noreferrer" aria-label="Redcups Global — Party recap video — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/06-redcups-global.jpg" data-src="assets/video/portfolio/festivals/06-redcups-global.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">06</span>
+            <span>
+              <span class="p-card__title">Redcups Global</span>
+              <span class="p-card__caption">Party recap video</span>
+            </span>
+          </span>
+        </a>
+      </div>
+
+      <a class="portfolio-more" href="https://instagram.com/craft.frame.media" target="_blank" rel="noopener noreferrer">
+        <span data-i18n="portfolio.more">More on Instagram</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================== CORPORATE PORTFOLIO ============================== -->
+  <section class="section" id="corporate">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="corporate.eyebrow">Selected work — 02</p>
+        <h2 class="section__title" data-i18n="corporate.headline">Corporate &amp; Brand</h2>
+        <p class="section__intro" data-i18n="corporate.intro">Conference recaps, activations and brand content for companies who don't want their event video to feel like a corporate video.</p>
+      </div>
+
+      <div class="portfolio-grid" data-video-group="corporate">
+        <a class="p-card p-card--h169 p-card--glow-c" data-video-slot="corporate/01-messalka-wpp-media" href="https://instagram.com/reel/DX6MegtsTmJ" target="_blank" rel="noopener noreferrer" aria-label="Messalka Events — WPP media event video — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/01-messalka-wpp-media.jpg" data-src="assets/video/portfolio/corporate/01-messalka-wpp-media.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">01</span>
+            <span>
+              <span class="p-card__title">Messalka Events</span>
+              <span class="p-card__caption">WPP media event video</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--v p-card--glow-a" data-video-slot="corporate/02-eventslife-eu-nepi-rockcastle" href="https://instagram.com/reel/DX6L0E1MQ6y" target="_blank" rel="noopener noreferrer" aria-label="Eventslife EU — NEPI Rockcastle event video — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/02-eventslife-eu-nepi-rockcastle.jpg" data-src="assets/video/portfolio/corporate/02-eventslife-eu-nepi-rockcastle.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">02</span>
+            <span>
+              <span class="p-card__title">Eventslife EU</span>
+              <span class="p-card__caption">NEPI Rockcastle event video</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--v p-card--glow-b" data-video-slot="corporate/03-daybreak-pl-red-night" href="https://instagram.com/reel/DX6M5NnMOpQ" target="_blank" rel="noopener noreferrer" aria-label="Daybreak PL — Red Night event video — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/03-daybreak-pl-red-night.jpg" data-src="assets/video/portfolio/corporate/03-daybreak-pl-red-night.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">03</span>
+            <span>
+              <span class="p-card__title">Daybreak PL</span>
+              <span class="p-card__caption">Red Night event video</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--v p-card--glow-d" data-video-slot="corporate/04-messalka-recap" href="https://instagram.com/reel/DKhw2vlshRV" target="_blank" rel="noopener noreferrer" aria-label="Messalka Events — recap video — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/04-messalka-recap.jpg" data-src="assets/video/portfolio/corporate/04-messalka-recap.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">04</span>
+            <span>
+              <span class="p-card__title">Messalka Events</span>
+              <span class="p-card__caption">Recap video</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--h169 p-card--glow-e" data-video-slot="corporate/05-smith-nephew-summer-2025" href="https://instagram.com/reel/DOntm7IjCRa" target="_blank" rel="noopener noreferrer" aria-label="Smith &amp; Nephew Summer event 2025 — Event video — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/05-smith-nephew-summer-2025.jpg" data-src="assets/video/portfolio/corporate/05-smith-nephew-summer-2025.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">05</span>
+            <span>
+              <span class="p-card__title">Smith &amp; Nephew Summer event 2025</span>
+              <span class="p-card__caption">Event video</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="p-card p-card--h169 p-card--glow-a" data-video-slot="corporate/06-dagence-esabor-bentley-summer" href="https://instagram.com/reel/DOnrIgKjNLu" target="_blank" rel="noopener noreferrer" aria-label="D'Agence — Esabor &amp; Bentley Summer event — Event video — watch on Instagram">
+          <video class="p-card__video" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/06-dagence-esabor-bentley-summer.jpg" data-src="assets/video/portfolio/corporate/06-dagence-esabor-bentley-summer.mp4" aria-hidden="true"></video>
+          <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
+          <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
+          <span class="p-card__meta">
+            <span class="p-card__index mono">06</span>
+            <span>
+              <span class="p-card__title">D'Agence — Esabor &amp; Bentley Summer event</span>
+              <span class="p-card__caption">Event video</span>
+            </span>
+          </span>
+        </a>
+      </div>
+
+      <a class="portfolio-more" href="https://instagram.com/craft.frame.media" target="_blank" rel="noopener noreferrer">
+        <span data-i18n="portfolio.more">More on Instagram</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================== TRUSTED BY ============================== -->
+  <section class="section" id="trusted">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="trusted.eyebrow">Trusted by</p>
+        <h2 class="section__title" data-i18n="trusted.headline">Festivals, artists &amp; brands we've worked with</h2>
+      </div>
+
+      <div class="trusted__grid">
+        <div>
+          <p class="trusted-col__label" data-i18n="trusted.col1.label">Festivals &amp; Artists</p>
+          <ul class="trusted-list">
+            <li>Brunch Electronik</li>
+            <li>Ultra Music Festival — Resistance</li>
+            <li>Upperground Poland</li>
+            <li>ASOT Poland</li>
+            <li>Exist Poland</li>
+            <li>Surround</li>
+            <li>Euforia Dźwięku</li>
+            <li>Universal Music</li>
+          </ul>
+
+          <div class="trusted-sub">
+            <p class="trusted-sub__label" data-i18n="trusted.sub.label">Some of the artists captured by our cameras:</p>
+            <ul class="trusted-sub__list">
+              <li>Korolova</li>
+              <li>Sara Landry</li>
+              <li>Armin van Buuren</li>
+              <li>Amelie Lens</li>
+              <li>Solomun</li>
+              <li>Artbat</li>
+              <li>Miss Monique</li>
+              <li>Marten Lou</li>
+              <li>Clara Cuve</li>
+              <li>John Summit</li>
+              <li>Giuseppe Ottaviani</li>
+              <li>Hi-Lo</li>
+              <li>Kasia</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <p class="trusted-col__label" data-i18n="trusted.col2.label">Corporate &amp; Brand</p>
+          <ul class="trusted-list">
+            <li>Messalka Events</li>
+            <li>D'Agence</li>
+            <li>Bentley Poland</li>
+            <li>Levi's Poland</li>
+            <li>Smith &amp; Nephew</li>
+            <li>NEPI Rockcastle</li>
+            <li>WPP Media</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CONTACT ============================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+      <h2 class="contact__title" data-i18n-html="contact.headline">Let's shoot something <em>worth watching.</em></h2>
+      <p class="contact__subtext" data-i18n="contact.subtext">Festival, aftermovie, conference recap, or brand campaign — tell us what you're planning and we'll get back to you fast.</p>
+
+      <div class="social-row">
+        <a href="https://instagram.com/craft.frame.media" target="_blank" rel="noopener noreferrer" aria-label="Craft Frame Media on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="mailto:hello@craftframe-media.com" aria-label="Email Craft Frame Media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <ul class="contact-list">
+        <li>
+          <a href="mailto:hello@craftframe-media.com">
+            <span>
+              <span class="contact-list__label" data-i18n="contact.method.email">Email</span>
+              <span class="contact-list__value">hello@craftframe-media.com</span>
+            </span>
+            <svg class="contact-list__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/000000000000" target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="contact-list__label" data-i18n="contact.method.whatsapp">WhatsApp</span>
+              <span class="contact-list__value" data-i18n="contact.method.whatsappValue">Message us</span>
+            </span>
+            <svg class="contact-list__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/craft.frame.media" target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="contact-list__label" data-i18n="contact.method.studioIg">Studio Instagram</span>
+              <span class="contact-list__value">@craft.frame.media</span>
+            </span>
+            <svg class="contact-list__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__row">
+      <a href="#top" class="footer__logo" aria-label="Craft Frame Media — home">
+        <img src="assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media" width="600" height="205" />
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#festivals" data-i18n="nav.festivals">Festivals</a>
+        <a href="#corporate" data-i18n="nav.corporate">Events / Corporate</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer__row">
+      <p class="footer__meta" data-i18n="footer.copyright">© 2026 Craft Frame Media. All rights reserved.</p>
+      <p class="footer__meta">Warsaw · Lisbon</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script type="module" src="js/main.js?v=20260822c"></script>
+</body>
+</html>

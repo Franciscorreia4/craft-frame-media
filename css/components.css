@@ -1,0 +1,842 @@
+/* ==========================================================================
+   Components — buttons, hero, stats, about, services, portfolio, trusted-by,
+   contact, signature viewfinder-frame + timecode motif
+   ========================================================================== */
+
+/* --------------------------------- Buttons -------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--text-primary);
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn--sm {
+  min-height: 40px;
+  padding: 0 var(--space-5);
+}
+
+/* -------------------------- Signature: frame marks ------------------------ */
+/* Viewfinder-style corner brackets — the recurring motif tying the site back
+   to "Frame" in the brand name. Rest state: quiet outline. Active/hover: accent. */
+
+.frame-marks {
+  position: absolute;
+  inset: 16px;
+  pointer-events: none;
+}
+
+.frame-marks span {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--text-secondary);
+  opacity: 0.5;
+  transition: border-color var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out),
+    inset var(--dur-base) var(--ease-out);
+}
+
+.frame-marks span:nth-child(1) {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.frame-marks span:nth-child(2) {
+  top: 0;
+  right: 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.frame-marks span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+.frame-marks span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+.frame-marks--active span {
+  border-color: var(--accent);
+  opacity: 0.9;
+}
+
+/* ---------------------------------- Hero ---------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: var(--space-16);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(120% 90% at 50% 0%, #17131b 0%, var(--bg) 62%);
+  pointer-events: none;
+}
+
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--glow-a), var(--glow-c);
+  opacity: 0.55;
+  filter: blur(10px);
+}
+
+/* Gallery: real footage cycling behind the hero copy. Slides cross-fade;
+   only the active one plays (see hero-gallery.js). A dark scrim sits above
+   the video and below the accent glow/grain so headline contrast holds
+   regardless of how bright a given clip is. */
+.hero__gallery {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  /* Purely decorative — never let the video layer intercept clicks meant
+     for the controls stacked above it (this is what was breaking the
+     next-arrow: an actively-playing <video> can end up compositited on
+     its own GPU layer and win hit-testing over normal DOM stacking in
+     some browsers, even though z-index says otherwise). */
+  pointer-events: none;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 700ms var(--ease-out);
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(10, 10, 11, 0.6) 0%, rgba(10, 10, 11, 0.68) 45%, rgba(10, 10, 11, 0.85) 100%);
+}
+
+.hero__glow {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  width: min(70vw, 900px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+  animation: heroPulse 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__glow {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+
+.hero__frame {
+  position: absolute;
+  inset: clamp(16px, 3vw, 40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__frame .frame-marks {
+  inset: 0;
+}
+
+.hero__frame .frame-marks span {
+  width: 26px;
+  height: 26px;
+  border-color: var(--border-strong);
+  opacity: 0.8;
+}
+
+.hero__readout {
+  position: absolute;
+  top: clamp(24px, 4vw, 52px);
+  right: clamp(24px, 4vw, 52px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+}
+
+.rec-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: recPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes recPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rec-dot {
+    animation: none;
+  }
+}
+
+.hero__gallery-controls {
+  position: absolute;
+  top: clamp(70px, 12vw, 110px);
+  right: clamp(20px, 4vw, 52px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.hero__next {
+  position: relative;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  /* No backdrop-filter here on purpose — a blurred button sitting directly
+     over an actively-playing <video> is what broke click hit-testing at
+     wide viewports (the video's own GPU compositing layer could win over
+     normal DOM stacking). Flat, more opaque background instead. */
+  background: rgba(10, 10, 11, 0.75);
+  color: var(--text-primary);
+  transition: border-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.hero__next svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hero__next:hover,
+.hero__next:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.06);
+}
+
+.hero__dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hero__dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--text-tertiary);
+  background: transparent;
+  padding: 0;
+  transition: background var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.hero__dot::before {
+  /* Expands the tap target to ~36px without growing the visible dot. */
+  content: "";
+  position: absolute;
+  inset: -14px;
+}
+
+.hero__dot:hover,
+.hero__dot:focus-visible {
+  border-color: var(--accent);
+}
+
+.hero__dot.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.3);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--space-10);
+}
+
+.hero__title {
+  font-size: var(--text-hero);
+  max-width: 15ch;
+  margin-bottom: var(--space-6);
+}
+
+.hero__title em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.hero__subtext {
+  font-size: var(--text-lead);
+  color: var(--text-secondary);
+  max-width: 42ch;
+  margin-bottom: var(--space-8);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.hero__stats {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: var(--space-6);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border);
+}
+
+.stat__value {
+  font-family: var(--font-mono);
+  font-size: var(--text-stat);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat--text .stat__value {
+  font-size: clamp(1.1rem, 0.9rem + 0.6vw, 1.375rem);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+}
+
+.stat__label {
+  margin-top: var(--space-2);
+  font-size: var(--text-small);
+  color: var(--text-tertiary);
+}
+
+/* ---------------------------------- About ---------------------------------- */
+
+.about__grid {
+  max-width: 46rem;
+}
+
+.about__body {
+  margin-top: var(--space-5);
+  font-size: var(--text-lead);
+  color: var(--text-secondary);
+  max-width: 46ch;
+}
+
+.about__body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about__locations {
+  margin-top: var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  max-width: 32rem;
+}
+
+.location {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.location__city {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+}
+
+/* --------------------------------- Services -------------------------------- */
+
+.services__grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.service-col {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-strong);
+}
+
+.service-col__title {
+  font-size: var(--text-h3);
+  margin-bottom: var(--space-6);
+}
+
+.service-col__list li {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-lead);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.service-col__list li:last-child {
+  padding-bottom: 0;
+}
+
+.service-col__list li::before {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: 5px;
+  margin-top: 0.55em;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* -------------------------------- Portfolio -------------------------------- */
+
+.portfolio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.p-card {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  /* Aspect ratio is set per-card by orientation, matching the real footage
+     rather than an arbitrary "featured vs. reel" split. */
+  aspect-ratio: 9 / 16;
+  transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.p-card--v {
+  aspect-ratio: 9 / 16;
+}
+
+.p-card--h54 {
+  aspect-ratio: 5 / 4;
+}
+
+.p-card--h169 {
+  aspect-ratio: 16 / 9;
+}
+
+.p-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+/* Real footage sits above the glow (which stays as a fallback for any card
+   without a video yet). The poster attribute covers the "not playing yet"
+   state; JS (video.js) starts/stops playback based on scroll visibility. */
+.p-card__video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-card--glow-a::before {
+  background: var(--glow-a);
+}
+.p-card--glow-b::before {
+  background: var(--glow-b);
+}
+.p-card--glow-c::before {
+  background: var(--glow-c);
+}
+.p-card--glow-d::before {
+  background: var(--glow-d);
+}
+.p-card--glow-e::before {
+  background: var(--glow-e);
+}
+
+.p-card:hover,
+.p-card:focus-visible {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+}
+
+.p-card:hover::before {
+  opacity: 1.3;
+}
+
+.p-card:hover .frame-marks span,
+.p-card:focus-visible .frame-marks span {
+  border-color: var(--accent);
+  opacity: 1;
+  inset: -3px;
+}
+
+/* Bottom-fade scrim so the title/caption stay legible over real footage —
+   z-indexed above the video regardless of DOM order, so it can't be
+   accidentally pushed behind by the pseudo-element paint order. */
+.p-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(6, 6, 7, 0.85) 0%, rgba(6, 6, 7, 0.4) 30%, transparent 58%);
+  pointer-events: none;
+}
+
+.p-card .frame-marks {
+  z-index: 2;
+}
+
+.p-card__play {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: rgba(10, 10, 11, 0.55);
+  backdrop-filter: blur(6px);
+  color: var(--text-primary);
+  transition: background var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.p-card__play svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 2px;
+}
+
+.p-card:hover .p-card__play {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-on-accent);
+  transform: scale(1.08);
+}
+
+.p-card__meta {
+  position: absolute;
+  left: var(--space-6);
+  right: var(--space-5);
+  bottom: var(--space-6);
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.p-card__index {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--text-tertiary);
+  padding-bottom: 3px;
+}
+
+.p-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.p-card__caption {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.portfolio-more {
+  margin-top: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  transition: color var(--dur-fast) var(--ease-out), gap var(--dur-fast) var(--ease-out);
+}
+
+.portfolio-more svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.portfolio-more:hover,
+.portfolio-more:focus-visible {
+  color: var(--accent);
+  gap: var(--space-3);
+}
+
+.portfolio-more:hover svg,
+.portfolio-more:focus-visible svg {
+  transform: translate(2px, -2px);
+}
+
+/* ------------------------------- Trusted by -------------------------------- */
+
+.trusted__grid {
+  display: grid;
+  gap: var(--space-10);
+}
+
+.trusted-col__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-5);
+}
+
+.trusted-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+.trusted-list li {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.trusted-sub {
+  margin-top: var(--space-8);
+}
+
+.trusted-sub__label {
+  font-size: var(--text-micro);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-3);
+}
+
+.trusted-sub__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+
+.trusted-sub__list li {
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+/* --------------------------------- Contact --------------------------------- */
+
+.contact {
+  position: relative;
+}
+
+.contact__title {
+  font-size: var(--text-h2);
+  max-width: 20ch;
+}
+
+.contact__title em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.contact__subtext {
+  margin-top: var(--space-5);
+  font-size: var(--text-lead);
+  color: var(--text-secondary);
+  max-width: 48ch;
+}
+
+.social-row {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.social-row a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  transition: border-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.social-row a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-row a:hover,
+.social-row a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contact-list {
+  margin-top: var(--space-12);
+}
+
+.contact-list li {
+  border-top: 1px solid var(--border);
+}
+
+.contact-list li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-6);
+  transition: padding-left var(--dur-base) var(--ease-out);
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  padding-left: var(--space-2);
+}
+
+.contact-list__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.contact-list__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
+  font-weight: 500;
+}
+
+.contact-list__arrow {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--text-tertiary);
+  transition: transform var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+}
+
+.contact-list a:hover .contact-list__arrow,
+.contact-list a:focus-visible .contact-list__arrow {
+  transform: translate(4px, -4px);
+  color: var(--accent);
+}
