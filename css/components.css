@@ -439,6 +439,19 @@
   font-size: var(--text-h3);
 }
 
+/* Flat founder credit line — deliberately understated (small, tertiary
+   color, no icon/photo) rather than a marketing-style bio. */
+.about__credit {
+  margin-top: var(--space-8);
+  font-size: var(--text-small);
+  color: var(--text-tertiary);
+}
+
+.about__credit strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
 /* --------------------------------- Services -------------------------------- */
 
 .services__grid {

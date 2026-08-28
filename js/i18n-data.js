@@ -30,6 +30,7 @@ export const dictionaries = {
     "about.body": "<strong>Craft Frame Media</strong> creates video and photography for events and brands that refuse to look ordinary. Based in Warsaw and Lisbon, working worldwide — we bring a creative eye and a professional process to every shoot, from festival main stages to corporate &amp; brand events.",
     "about.loc1.city": "Warsaw",
     "about.loc2.city": "Lisbon",
+    "about.credit": "Founded by <strong>Francisco Correia</strong> in 2021. Past work includes Ultra Resistance, A State of Trance, Upperground, and Messalka Events.",
 
     "services.eyebrow": "Services",
     "services.headline": "What we deliver",
@@ -99,6 +100,7 @@ export const dictionaries = {
     "about.body": "<strong>Craft Frame Media</strong> tworzy materiały wideo i fotograficzne dla wydarzeń i marek, które nie chcą wyglądać zwyczajnie. Z bazą w Warszawie i Lizbonie, działając na całym świecie — łączymy kreatywne spojrzenie z profesjonalnym procesem przy każdej produkcji, od głównych scen festiwali po wydarzenia korporacyjne i eventy marek.",
     "about.loc1.city": "Warszawa",
     "about.loc2.city": "Lizbona",
+    "about.credit": "Firmę założył <strong>Francisco Correia</strong> w 2021 roku. Wśród dotychczasowych realizacji: Ultra Resistance, A State of Trance, Upperground i Messalka Events.",
 
     "services.eyebrow": "Usługi",
     "services.headline": "Co dostarczamy",
