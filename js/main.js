@@ -1,8 +1,8 @@
-import { initI18n } from "./i18n.js?v=20260822c";
-import { initNav } from "./nav.js?v=20260822c";
-import { initMotion } from "./motion.js?v=20260822c";
-import { initPortfolioVideo } from "./video.js?v=20260822c";
-import { initHeroGallery } from "./hero-gallery.js?v=20260822c";
+import { initI18n } from "./i18n.js?v=20260828a";
+import { initNav } from "./nav.js?v=20260828a";
+import { initMotion } from "./motion.js?v=20260828a";
+import { initPortfolioVideo } from "./video.js?v=20260828a";
+import { initHeroGallery } from "./hero-gallery.js?v=20260828a";
 
 function boot() {
   initI18n();

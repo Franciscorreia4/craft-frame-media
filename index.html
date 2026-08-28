@@ -22,7 +22,6 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Craft Frame Media — Warsaw · Lisbon — Video & Photography" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:locale:alternate" content="pl_PL" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" data-i18n="meta.title" content="Craft Frame Media — Video Production for Festivals &amp; Corporate Events | Warsaw &amp; Lisbon" />
@@ -49,18 +48,19 @@
 }
 </script>
 
-<link rel="preload" as="image" href="assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" />
+<link rel="preload" as="image" href="assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" fetchpriority="high" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="css/tokens.css?v=20260822c" />
-<link rel="stylesheet" href="css/base.css?v=20260822c" />
-<link rel="stylesheet" href="css/layout.css?v=20260822c" />
-<link rel="stylesheet" href="css/components.css?v=20260822c" />
-<link rel="stylesheet" href="css/responsive.css?v=20260822c" />
-<link rel="stylesheet" href="css/animations.css?v=20260822c" />
+<link rel="stylesheet" href="css/tokens.css?v=20260828a" />
+<link rel="stylesheet" href="css/base.css?v=20260828a" />
+<link rel="stylesheet" href="css/layout.css?v=20260828a" />
+<link rel="stylesheet" href="css/components.css?v=20260828a" />
+<link rel="stylesheet" href="css/responsive.css?v=20260828a" />
+<link rel="stylesheet" href="css/animations.css?v=20260828a" />
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
@@ -123,7 +123,7 @@
   <section class="hero" id="top">
     <div class="hero__bg" aria-hidden="true">
       <div class="hero__gallery" id="hero-gallery">
-        <video class="hero__slide is-active" muted loop playsinline preload="auto" poster="assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" src="assets/video/hero/01-upperground.mp4"></video>
+        <video class="hero__slide is-active" muted loop playsinline preload="metadata" poster="assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" src="assets/video/hero/01-upperground.mp4"></video>
         <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/01-messalka-wpp-media.jpg" data-src="assets/video/hero/02-wpp-media.mp4"></video>
         <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/festivals/02-our-affairs-lisbon-2026.jpg" data-src="assets/video/hero/03-our-affairs.mp4"></video>
         <video class="hero__slide" muted loop playsinline preload="none" poster="assets/video/portfolio/corporate/06-dagence-esabor-bentley-summer.jpg" data-src="assets/video/hero/04-dagence.mp4"></video>
@@ -512,15 +512,6 @@
           </a>
         </li>
         <li>
-          <a href="https://wa.me/000000000000" target="_blank" rel="noopener noreferrer">
-            <span>
-              <span class="contact-list__label" data-i18n="contact.method.whatsapp">WhatsApp</span>
-              <span class="contact-list__value" data-i18n="contact.method.whatsappValue">Message us</span>
-            </span>
-            <svg class="contact-list__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </li>
-        <li>
           <a href="https://instagram.com/craft.frame.media" target="_blank" rel="noopener noreferrer">
             <span>
               <span class="contact-list__label" data-i18n="contact.method.studioIg">Studio Instagram</span>
@@ -557,6 +548,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script type="module" src="js/main.js?v=20260822c"></script>
+<script type="module" src="js/main.js?v=20260828a"></script>
 </body>
 </html>

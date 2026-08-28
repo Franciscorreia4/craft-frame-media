@@ -88,7 +88,9 @@ duplicating into Polish yet.
 
 Hero and portfolio video are real footage now (hero is a 6-clip gallery,
 `js/hero-gallery.js`; portfolio cards use `js/video.js` for scroll-triggered
-playback). WhatsApp is still a dummy number, and there's no photo of
-Francisco on the site (removed by request). See `LAUNCH_CHECKLIST.md` for the
-full list of items to confirm with
-the client before this goes live.
+playback). WhatsApp has no real number yet, so that contact method was
+removed entirely rather than shipping a placeholder — see
+`LAUNCH_CHECKLIST.md` to re-add it once a number exists. There's also no
+photo of Francisco on the site (removed by request). See
+`LAUNCH_CHECKLIST.md` for the full list of items to confirm with the client
+before this goes live.

@@ -1,4 +1,4 @@
-import { dictionaries } from "./i18n-data.js?v=20260822c";
+import { dictionaries } from "./i18n-data.js?v=20260828a";
 
 const STORAGE_KEY = "cfm-lang";
 const DEFAULT_LANG = "en";

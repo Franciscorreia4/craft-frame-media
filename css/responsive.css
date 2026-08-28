@@ -84,3 +84,31 @@
     max-width: 17ch;
   }
 }
+
+/* Short viewports (common laptop screens like 1366x768) — .hero centers its
+   content with justify-content + overflow:hidden, so on short-but-wide
+   screens the stacked title/subtext/CTA spacing pushes the CTA row past the
+   bottom edge and it gets clipped. Tighten vertical spacing only (never
+   font-size, so the headline doesn't visually shrink) until the whole stack
+   fits inside the shorter box. */
+@media (max-height: 820px) {
+  .hero {
+    padding-top: var(--space-10);
+  }
+
+  .hero__inner {
+    padding-top: var(--space-6);
+  }
+
+  .hero__title {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__subtext {
+    margin-bottom: var(--space-5);
+  }
+
+  .hero__ctas {
+    margin-bottom: var(--space-6);
+  }
+}

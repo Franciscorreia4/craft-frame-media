@@ -3,14 +3,14 @@
 Carried over from the handoff doc's open questions. None of these were
 silently changed in either direction — flagging them here instead.
 
-- [ ] **Domain vs. email mismatch.** Domain is `craft-frame-media.com`
+- [x] **Domain vs. email mismatch.** Domain is `craft-frame-media.com`
       (hyphens between all three words); the contact email is
       `hello@craftframe-media.com` (no hyphen between "craft" and "frame").
-      Both are used as-given throughout the site. Needs a decision on which
-      is correct before launch.
-- [ ] **Real WhatsApp number.** The WhatsApp link currently points to
-      `https://wa.me/000000000000` (placeholder). Swap the digits in
-      `index.html` (search `wa.me`) once a real number is provided.
+      Confirmed intentional — both are correct as-is, no change needed.
+- [x] **WhatsApp.** No real number was available, so the WhatsApp contact-list
+      item was removed entirely (`index.html` + both i18n dictionaries) rather
+      than shipping the `wa.me/000000000000` placeholder. Re-add it (`Contact`
+      section, next to the Email list item) once a real number exists.
 - [x] **Portfolio video** — all 12 cards (6 festivals + 6 corporate) now play
       real muted looping footage, only while scrolled into view, with poster
       frames as the mobile/reduced-motion fallback. Source clips are full-length
@@ -29,13 +29,15 @@ silently changed in either direction — flagging them here instead.
 - [ ] **Hosting/deployment target** for `craft-frame-media.com` — not yet
       decided. The site is a static folder, deployable anywhere (see
       README.md).
-- [ ] **Corporate client sign-off.** Bentley Poland, Levi's Poland, Smith &
-      Nephew, NEPI Rockcastle, WPP Media, D'Agence, Messalka Events are named
-      publicly in the Trusted-by section — confirm no agency/NDA restriction
-      before this goes live.
+- [x] **Corporate client sign-off.** Bentley Poland, Levi's Poland, Smith &
+      Nephew, NEPI Rockcastle, WPP Media, D'Agence, Messalka Events named
+      publicly in the Trusted-by section — all confirmed, no NDA restriction.
 - [ ] **Portfolio card captions are placeholders**, written for this build
       and easy to edit (`index.html`, look for `p-card__title` /
-      `p-card__caption`) — not final client-approved copy.
+      `p-card__caption`) — not final client-approved copy. Real per-clip
+      dates are now known (see git history / handoff notes) and still need
+      to be worked into unique, non-repetitive caption copy plus visible
+      (not just `aria-label`) client/project/year/city text.
 - [x] **SEO pass** — canonical URL, Open Graph + Twitter Card tags, a real
       1200×630 share image, apple-touch-icon, Organization structured data
       (JSON-LD), `robots.txt`, and `sitemap.xml` are all in place. These all

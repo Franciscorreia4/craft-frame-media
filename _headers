@@ -1,0 +1,39 @@
+# Security headers for every response. HSTS is already applied by Netlify
+# at the edge for the custom domain, so it isn't repeated here.
+#
+# CSP notes:
+# - script-src allows the one fixed inline bootstrap script via its exact
+#   sha256 hash (adds the `js` class before paint) instead of 'unsafe-inline',
+#   plus the GSAP/ScrollTrigger CDN. The inline JSON-LD block needs no
+#   allowance — script-src only governs elements with a JavaScript MIME type,
+#   and application/ld+json isn't one.
+# - style-src allows 'unsafe-inline' because the one <img style="..."> logo
+#   sizing attribute and Google Fonts' returned stylesheet both need it;
+#   there's no build step here to move either to a static class/nonce.
+# - connect-src stays 'self' only — nothing on this page opens a fetch/XHR/
+#   websocket of its own. frame-src is 'none' because this page never embeds
+#   an iframe of its own either — as a side effect this also blocks the
+#   `nl-badge-frame` iframe Netlify's edge injects into every response
+#   (their "Powered by Netlify" badge), since it's an iframe in the same
+#   document our CSP header covers. That happens to double as the fix for
+#   the badge overlapping the mobile CTA button — verify after deploy that
+#   the badge is actually gone rather than just erroring in the console; if
+#   Netlify needs it exempted for some functional reason, loosen frame-src
+#   to that badge's specific origin instead of 'none'.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'
+
+# Long-lived immutable caching for video assets — these are large background
+# loops that change rarely; Netlify's default is
+# `public,max-age=0,must-revalidate` (always-revalidate) which re-checks on
+# every load for no benefit here. Filenames aren't content-hashed, so if a
+# video is ever replaced, rename the file (or bump a `?v=` query the way
+# CSS/JS already do) rather than overwriting the same path — otherwise
+# returning visitors' browsers/CDN edges will keep serving the old bytes for
+# up to a year.
+/assets/video/*
+  Cache-Control: public, max-age=31536000, immutable

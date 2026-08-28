@@ -63,7 +63,14 @@ function initTimecode() {
 
   const fps = 25;
   const start = performance.now();
-  let raf;
+  let raf = null;
+  // Two independent gates — the loop only runs while both are true. Tab
+  // visibility was the original gate; hero-in-viewport is added so the rAF
+  // loop also stops the instant this purely-decorative readout scrolls off
+  // screen, instead of ticking away in the background for the rest of the
+  // page (portfolio grid, contact, etc.) where it's never seen.
+  let tabVisible = !document.hidden;
+  let heroVisible = true;
 
   const pad = (n) => String(n).padStart(2, "0");
 
@@ -78,15 +85,33 @@ function initTimecode() {
     raf = requestAnimationFrame(tick);
   };
 
-  raf = requestAnimationFrame(tick);
+  const sync = () => {
+    const shouldRun = tabVisible && heroVisible;
+    if (shouldRun && raf === null) {
+      raf = requestAnimationFrame(tick);
+    } else if (!shouldRun && raf !== null) {
+      cancelAnimationFrame(raf);
+      raf = null;
+    }
+  };
+
+  sync();
 
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      cancelAnimationFrame(raf);
-    } else {
-      raf = requestAnimationFrame(tick);
-    }
+    tabVisible = !document.hidden;
+    sync();
   });
+
+  const heroSection = document.getElementById("top");
+  if (heroSection && "IntersectionObserver" in window) {
+    new IntersectionObserver(
+      (entries) => {
+        heroVisible = entries[entries.length - 1].isIntersecting;
+        sync();
+      },
+      { threshold: 0 }
+    ).observe(heroSection);
+  }
 }
 
 function initLoadedFade() {

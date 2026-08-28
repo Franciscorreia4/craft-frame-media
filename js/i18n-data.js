@@ -68,8 +68,6 @@ export const dictionaries = {
     "contact.headline": "Let's shoot something <em>worth watching.</em>",
     "contact.subtext": "Festival, aftermovie, conference recap, or brand campaign — tell us what you're planning and we'll get back to you fast.",
     "contact.method.email": "Email",
-    "contact.method.whatsapp": "WhatsApp",
-    "contact.method.whatsappValue": "Message us",
     "contact.method.studioIg": "Studio Instagram",
 
     "footer.copyright": "© 2026 Craft Frame Media. All rights reserved.",
@@ -139,8 +137,6 @@ export const dictionaries = {
     "contact.headline": "Zróbmy coś, co <em>warto obejrzeć.</em>",
     "contact.subtext": "Festiwal, aftermovie, podsumowanie konferencji czy kampania marki — daj nam znać, co planujesz, a odezwiemy się szybko.",
     "contact.method.email": "E-mail",
-    "contact.method.whatsapp": "WhatsApp",
-    "contact.method.whatsappValue": "Napisz do nas",
     "contact.method.studioIg": "Instagram studia",
 
     "footer.copyright": "© 2026 Craft Frame Media. Wszelkie prawa zastrzeżone.",
