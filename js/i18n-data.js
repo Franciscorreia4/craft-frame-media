@@ -12,7 +12,7 @@
 
 export const dictionaries = {
   en: {
-    "meta.title": "Craft Frame Media — Video Production for Festivals & Corporate Events | Warsaw & Lisbon",
+    "meta.title": "Craft Frame Media — Festival & Corporate Video Production",
     "meta.description": "Craft Frame Media is a video production company based in Warsaw and Lisbon, specializing in electronic music festival aftermovies and corporate event films.",
     "a11y.skip": "Skip to content",
 
@@ -82,7 +82,7 @@ export const dictionaries = {
   },
 
   pl: {
-    "meta.title": "Craft Frame Media — Produkcja wideo na festiwale i wydarzenia korporacyjne | Warszawa i Lizbona",
+    "meta.title": "Craft Frame Media — Wideo festiwalowe i korporacyjne",
     "meta.description": "Craft Frame Media to firma produkcji wideo z siedzibą w Warszawie i Lizbonie, specjalizująca się w aftermovies z festiwali muzyki elektronicznej oraz filmach z wydarzeń korporacyjnych.",
     "a11y.skip": "Przejdź do treści",
 
