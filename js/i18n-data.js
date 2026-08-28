@@ -27,14 +27,14 @@ export const dictionaries = {
 
     "about.eyebrow": "About",
     "about.headline": "Two scenes. One standard.",
-    "about.body": "<strong>Craft Frame Media</strong> creates video and photography for events and brands that refuse to look ordinary. Based in Warsaw and Lisbon, working worldwide — we bring a creative eye and a professional process to every shoot, from festival main stages to corporate &amp; brand events.",
+    "about.body": "<strong>Craft Frame Media</strong> creates video and photography for events and brands that refuse to look ordinary. Based in Warsaw and Lisbon since 2021, the studio splits its work between two tracks: aftermovies and highlight reels for electronic music festivals, and recap films and brand content for corporate events — over 200 events covered so far, from festival main stages to boardroom-facing campaign videos, on turnarounds built for how the footage actually gets used.",
     "about.loc1.city": "Warsaw",
     "about.loc2.city": "Lisbon",
     "about.credit": "Founded by <strong>Francisco Correia</strong> in 2021. Past work includes Ultra Resistance, A State of Trance, Upperground, and Messalka Events.",
 
     "services.eyebrow": "Services",
     "services.headline": "What we deliver",
-    "services.intro": "Every deliverable is scoped to how it'll actually be used — a 60-second aftermovie for Instagram plays by different rules than a 5-minute recap for a board deck.",
+    "services.intro": "Every deliverable is scoped to how it'll actually be used — a 60-second aftermovie for Instagram plays by different rules than a 5-minute recap for a board deck. Same-day turnarounds are available when the event calls for it, and every cut is delivered in the aspect ratio the platform actually needs — 9:16 for Reels and Stories, 16:9 for keynote screens and YouTube.",
     "services.col1.title": "Festivals & Electronic Music",
     "services.col1.item1": "Aftermovies",
     "services.col1.item2": "Artist & DJ highlight reels",
@@ -97,14 +97,14 @@ export const dictionaries = {
 
     "about.eyebrow": "O nas",
     "about.headline": "Dwie sceny. Jeden standard.",
-    "about.body": "<strong>Craft Frame Media</strong> tworzy materiały wideo i fotograficzne dla wydarzeń i marek, które nie chcą wyglądać zwyczajnie. Z bazą w Warszawie i Lizbonie, działając na całym świecie — łączymy kreatywne spojrzenie z profesjonalnym procesem przy każdej produkcji, od głównych scen festiwali po wydarzenia korporacyjne i eventy marek.",
+    "about.body": "<strong>Craft Frame Media</strong> tworzy materiały wideo i fotograficzne dla wydarzeń i marek, które nie chcą wyglądać zwyczajnie. Z bazą w Warszawie i Lizbonie od 2021 roku, studio dzieli swoją pracę na dwa kierunki: aftermovie i highlight reele dla festiwali muzyki elektronicznej oraz filmy podsumowujące i treści marketingowe dla wydarzeń korporacyjnych — ponad 200 zrealizowanych wydarzeń, od głównych scen festiwali po filmy kampanijne trafiające na salę zarządu, w tempie dopasowanym do tego, jak materiał faktycznie zostanie wykorzystany.",
     "about.loc1.city": "Warszawa",
     "about.loc2.city": "Lizbona",
     "about.credit": "Firmę założył <strong>Francisco Correia</strong> w 2021 roku. Wśród dotychczasowych realizacji: Ultra Resistance, A State of Trance, Upperground i Messalka Events.",
 
     "services.eyebrow": "Usługi",
     "services.headline": "Co dostarczamy",
-    "services.intro": "Każda realizacja jest dopasowana do tego, jak faktycznie zostanie wykorzystana — 60-sekundowy aftermovie na Instagram rządzi się innymi zasadami niż 5-minutowe podsumowanie do prezentacji zarządu.",
+    "services.intro": "Każda realizacja jest dopasowana do tego, jak faktycznie zostanie wykorzystana — 60-sekundowy aftermovie na Instagram rządzi się innymi zasadami niż 5-minutowe podsumowanie do prezentacji zarządu. W razie potrzeby dostępny jest montaż tego samego dnia, a każdy materiał trafia w formacie dopasowanym do platformy — 9:16 dla Reels i Stories, 16:9 na ekrany podczas prezentacji i YouTube.",
     "services.col1.title": "Festiwale i muzyka elektroniczna",
     "services.col1.item1": "Aftermovies",
     "services.col1.item2": "Highlighty artystów i DJ-ów",
