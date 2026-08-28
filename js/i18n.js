@@ -1,63 +1,22 @@
-import { dictionaries } from "./i18n-data.js?v=20260828b";
-
-const STORAGE_KEY = "cfm-lang";
-const DEFAULT_LANG = "en";
-
-function getStoredLang() {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return stored === "en" || stored === "pl" ? stored : null;
-  } catch (err) {
-    return null;
-  }
-}
-
-function storeLang(lang) {
-  try {
-    localStorage.setItem(STORAGE_KEY, lang);
-  } catch (err) {
-    /* ignore (private browsing / storage disabled) */
-  }
-}
-
-function applyLang(lang) {
-  const dict = dictionaries[lang] || dictionaries[DEFAULT_LANG];
-
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key] == null) return;
-    if (el.tagName === "META") {
-      el.setAttribute("content", dict[key]);
-    } else if (el.tagName === "TITLE") {
-      el.textContent = dict[key];
-    } else {
-      el.textContent = dict[key];
-    }
-  });
-
-  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
-    const key = el.getAttribute("data-i18n-html");
-    if (dict[key] == null) return;
-    el.innerHTML = dict[key];
-  });
-
-  document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
-    const isActive = btn.getAttribute("data-lang-btn") === lang;
-    btn.setAttribute("aria-pressed", String(isActive));
-  });
-}
-
+/**
+ * Language switching means switching pages, not swapping text in place.
+ * "/" and "/pl/" are two separate, fully server-rendered pages (see
+ * pl/index.html) — that's what makes Polish actually crawlable, instead of
+ * only reachable through a client-side toggle no crawler would ever click.
+ * This just wires the existing EN/PL buttons to navigate to the right URL,
+ * and sets aria-pressed to whichever one matches the current page.
+ */
 export function initI18n() {
-  const lang = getStoredLang() || DEFAULT_LANG;
-  applyLang(lang);
+  const isPlPage = location.pathname === "/pl/" || location.pathname === "/pl";
 
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+    const lang = btn.getAttribute("data-lang-btn");
+    const isActive = (lang === "pl") === isPlPage;
+    btn.setAttribute("aria-pressed", String(isActive));
+
     btn.addEventListener("click", () => {
-      const next = btn.getAttribute("data-lang-btn");
-      applyLang(next);
-      storeLang(next);
+      if (isActive) return;
+      location.href = lang === "pl" ? "/pl/" : "/";
     });
   });
 }

@@ -1,7 +1,14 @@
-// Craft Frame Media — bilingual content dictionaries.
-// Keys mirror the data-i18n / data-i18n-html attributes in index.html.
-// data-i18n-html entries may contain inline markup (<em>, <strong>) and MUST
-// be applied via innerHTML, never textContent.
+// Craft Frame Media — bilingual content reference.
+//
+// NOT imported anywhere at runtime as of Phase 4 (crawlable /pl/). English
+// and Polish are now two separate static pages (index.html and
+// pl/index.html) with their own hardcoded text, rather than one page
+// client-side-toggled from this dictionary — that's what makes Polish
+// actually indexable by Google instead of only reachable via a JS toggle.
+//
+// Kept as the source of truth for those translations so the two pages can
+// be kept in sync by hand when homepage copy changes — update this file's
+// "pl" values first, then carry the change into pl/index.html.
 
 export const dictionaries = {
   en: {

@@ -663,7 +663,14 @@
 }
 
 .portfolio-more {
-  margin-top: var(--space-2);
+  /* Deliberately generous, not just var(--space-2)/8px: the collage grid
+     above (.portfolio-grid at 1024px+) can under-report its own rendered
+     height by ~24px relative to its tallest row item — a browser rendering
+     quirk in how CSS Grid auto-sizes rows containing aspect-ratio items
+     with align-items:start, not a spacing/tessellation bug. A small margin
+     tuned to "just clear the grid" is exactly what that quirk breaks; this
+     buffer is sized to comfortably absorb it regardless of card mix. */
+  margin-top: var(--space-8);
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);

@@ -32,26 +32,26 @@ silently changed in either direction — flagging them here instead.
 - [x] **Corporate client sign-off.** Bentley Poland, Levi's Poland, Smith &
       Nephew, NEPI Rockcastle, WPP Media, D'Agence, Messalka Events named
       publicly in the Trusted-by section — all confirmed, no NDA restriction.
-- [ ] **Portfolio card captions are placeholders**, written for this build
-      and easy to edit (`index.html`, look for `p-card__title` /
-      `p-card__caption`) — not final client-approved copy. Real per-clip
-      dates are now known (see git history / handoff notes) and still need
-      to be worked into unique, non-repetitive caption copy plus visible
-      (not just `aria-label`) client/project/year/city text.
+- [x] **Portfolio card captions** rewritten with real per-clip dates (and city,
+      where confirmed) as visible text on every card, not just `aria-label` —
+      e.g. "Aftermovie — Warsaw — Jan 2026". No two cards share identical copy.
 - [x] **SEO pass** — canonical URL, Open Graph + Twitter Card tags, a real
-      1200×630 share image, apple-touch-icon, Organization structured data
-      (JSON-LD), `robots.txt`, and `sitemap.xml` are all in place. These all
-      point at `https://craft-frame-media.com/` — harmless as placeholders
-      now, but won't actually resolve (share previews, sitemap crawling)
-      until the domain/email question above is settled and the site is
-      deployed there. **Not implemented**: separate URLs per language
-      (`hreflang`) — the current EN/PL toggle swaps content client-side on
-      one URL, so Google only ever indexes whichever language rendered
-      first (English). Proper bilingual SEO needs distinct URLs (e.g.
-      `/pl/`) — a real restructuring, flagging for a future pass rather
-      than doing it silently here.
-
-## Not needed for v1 (per brief)
-
-- Dedicated `/festivals` and `/corporate` landing pages for paid traffic —
-  worth planning for once ad spend starts, not required for this launch.
+      1200×630 share image, apple-touch-icon, Organization/Service/VideoObject
+      structured data (JSON-LD), `robots.txt`, and `sitemap.xml` are all in
+      place and live on `https://craft-frame-media.com/`. Security headers
+      (`_headers`), a privacy policy, and reciprocal `hreflang` between `/`
+      and `/pl/` are also in place.
+- [x] **Dedicated `/festivals` and `/corporate` landing pages** — built as
+      real, independently-indexable pages (not homepage anchors), each with
+      its own title/description/canonical/`Service` schema and full portfolio
+      grid. English-only for now — see README.md's "Bilingual content"
+      section for the `/pl/` scope decision and the manual-sync trade-off
+      that comes with keeping two static homepages (`index.html` +
+      `pl/index.html`) without a build step.
+- [ ] **Client testimonials** — Services section lists "Corporate interviews
+      & testimonials" as a deliverable, but no real testimonials are on the
+      site yet. Add 2–3 once you have them (name + role + company).
+- [ ] **Business registration on the privacy page** — legal name and VAT ID
+      are listed; the street address was deliberately left off at your
+      request. Revisit if a registered address is ever required (e.g. some
+      jurisdictions' terms/impressum requirements).
