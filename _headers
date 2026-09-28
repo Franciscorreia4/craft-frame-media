@@ -2,23 +2,29 @@
 # at the edge for the custom domain, so it isn't repeated here.
 #
 # CSP notes:
-# - script-src allows the one fixed inline bootstrap script via its exact
-#   sha256 hash (adds the `js` class before paint) instead of 'unsafe-inline',
-#   plus the GSAP/ScrollTrigger CDN and the Umami analytics script. The
+# - script-src allows two fixed inline scripts by exact sha256 hash instead
+#   of 'unsafe-inline': our own bootstrap script (adds the `js` class before
+#   paint), and one Umami's script.js injects itself once it loads. That
+#   second hash was read directly from a live CSP-violation report after
+#   deploy, not guessed — if Umami ever changes what that inline script
+#   contains, the hash will need to be refreshed the same way (deploy,
+#   check the console for a new violation, copy its hash). Also allows the
+#   GSAP/ScrollTrigger CDN and cloud.umami.is (serves script.js itself). The
 #   inline JSON-LD block needs no allowance — script-src only governs
 #   elements with a JavaScript MIME type, and application/ld+json isn't one.
 # - style-src allows 'unsafe-inline' because the one <img style="..."> logo
 #   sizing attribute and Google Fonts' returned stylesheet both need it;
 #   there's no build step here to move either to a static class/nonce.
-# - connect-src allows cloud.umami.is — that's where the analytics script
-#   sends pageview/event beacons. Otherwise nothing on this page opens a
-#   fetch/XHR/websocket of its own. frame-src is 'none' because this page
-#   never embeds an iframe of its own either — as a side effect this also
-#   blocks the `nl-badge-frame` iframe Netlify's edge injects into every
-#   response (their "Powered by Netlify" badge), since it's an iframe in the
-#   same document our CSP header covers. That happens to double as the fix
-#   for the badge overlapping the mobile CTA button — verify after deploy
-#   that the badge is actually gone rather than just erroring in the
+# - connect-src allows gateway.umami.is — confirmed via live testing that
+#   this (not cloud.umami.is, which only serves the script file) is where
+#   Umami actually sends pageview/event beacons. Otherwise nothing on this
+#   page opens a fetch/XHR/websocket of its own. frame-src is 'none' because
+#   this page never embeds an iframe of its own either — as a side effect
+#   this also blocks the `nl-badge-frame` iframe Netlify's edge injects into
+#   every response (their "Powered by Netlify" badge), since it's an iframe
+#   in the same document our CSP header covers. That happens to double as
+#   the fix for the badge overlapping the mobile CTA button — verify after
+#   deploy that the badge is actually gone rather than just erroring in the
 #   console; if Netlify needs it exempted for some functional reason, loosen
 #   frame-src to that badge's specific origin instead of 'none'.
 /*
@@ -26,7 +32,7 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' https://cdnjs.cloudflare.com https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://cloud.umami.is; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-mTJ4cJaTm2Gw95GeXEpZdvEEY9ybh6FZu1bwcNE7QlY=' https://cdnjs.cloudflare.com https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://gateway.umami.is; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'
 
 # Long-lived immutable caching for video assets — these are large background
 # loops that change rarely; Netlify's default is
