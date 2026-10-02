@@ -535,10 +535,8 @@
 }
 
 /* Real footage sits above the glow (which stays as a fallback for any card
-   without a video yet). The real <img> behind the video (same box, earlier in
-   the DOM so the video paints over it) covers the "not playing yet" state; JS (video.js) starts/stops playback
-   based on scroll visibility. */
-.p-card__img,
+   without a video yet). The poster attribute covers the "not playing yet"
+   state; JS (video.js) starts/stops playback based on scroll visibility. */
 .p-card__video {
   position: absolute;
   inset: 0;
