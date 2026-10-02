@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://craft-frame-media.com/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://craft-frame-media.com/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://craft-frame-media.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://craft-frame-media.com/"/>
   </url>
   <url>
     <loc>https://craft-frame-media.com/pl/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://craft-frame-media.com/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://craft-frame-media.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://craft-frame-media.com/"/>
   </url>
   <url>
     <loc>https://craft-frame-media.com/festivals/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://craft-frame-media.com/festivals/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://craft-frame-media.com/pl/festivals/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://craft-frame-media.com/festivals/"/>
+  </url>
+  <url>
+    <loc>https://craft-frame-media.com/pl/festivals/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://craft-frame-media.com/festivals/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://craft-frame-media.com/pl/festivals/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://craft-frame-media.com/festivals/"/>
   </url>
   <url>
     <loc>https://craft-frame-media.com/corporate/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://craft-frame-media.com/corporate/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://craft-frame-media.com/pl/corporate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://craft-frame-media.com/corporate/"/>
+  </url>
+  <url>
+    <loc>https://craft-frame-media.com/pl/corporate/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://craft-frame-media.com/corporate/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://craft-frame-media.com/pl/corporate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://craft-frame-media.com/corporate/"/>
   </url>
   <url>
     <loc>https://craft-frame-media.com/privacy.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
   </url>
 </urlset>

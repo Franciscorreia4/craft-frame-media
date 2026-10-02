@@ -860,3 +860,70 @@
   transform: translate(4px, -4px);
   color: var(--accent);
 }
+
+/* How-we-work steps and FAQ (added in the SEO content pass). */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.step {
+  border-top: 1px solid var(--border-strong);
+  padding-top: var(--space-4);
+}
+.step__n {
+  color: var(--accent);
+  font-size: var(--text-small);
+}
+.step__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lead);
+  color: var(--text-primary);
+  margin: var(--space-2) 0;
+}
+.step p {
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+}
+.faq {
+  max-width: 46rem;
+  border-top: 1px solid var(--border);
+}
+.faq__item {
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-4) 0;
+}
+.faq__item summary {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  cursor: pointer;
+  list-style: none;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+.faq__item summary::after {
+  content: "+";
+  color: var(--accent);
+  flex: none;
+}
+.faq__item[open] summary::after {
+  content: "\2013";
+}
+.faq__item p {
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  margin-top: var(--space-3);
+}
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .steps { grid-template-columns: 1fr; }
+}
