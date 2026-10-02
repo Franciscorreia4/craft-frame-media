@@ -31,9 +31,84 @@
 <meta name="twitter:description" content="Craft Frame Media to firma produkcji wideo z siedzibą w Warszawie i Lizbonie, specjalizująca się w aftermovies z festiwali muzyki elektronicznej oraz filmach z wydarzeń korporacyjnych." />
 <meta name="twitter:image" content="https://craft-frame-media.com/assets/icons/og-image.png" />
 
-<!-- Organization/Service/VideoObject facts are the same regardless of page
-     language, so that graph isn't re-translated here — this WebPage block
-     just marks this specific URL as the Polish-language entry point. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://craft-frame-media.com/#organization",
+  "name": "Craft Frame Media",
+  "url": "https://craft-frame-media.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://craft-frame-media.com/assets/logo/cfm-logomark-512.png",
+    "width": 512,
+    "height": 512
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://craft-frame-media.com/assets/icons/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "description": "Produkcja wideo i fotograficzna dla festiwali muzyki elektronicznej oraz dla klientów korporacyjnych i marek.",
+  "email": "hello@craftframe-media.com",
+  "foundingDate": "2021",
+  "founder": {
+    "@type": "Person",
+    "name": "Francisco Correia"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@craftframe-media.com",
+    "contactType": "customer service",
+    "areaServed": [
+      "PL",
+      "PT"
+    ],
+    "availableLanguage": [
+      "English",
+      "Polish"
+    ]
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Warsaw"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Masovian Voivodeship"
+    },
+    {
+      "@type": "City",
+      "name": "Lisbon"
+    }
+  ],
+  "location": [
+    {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Warsaw",
+        "addressCountry": "PL"
+      }
+    },
+    {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lisbon",
+        "addressCountry": "PT"
+      }
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/craft.frame.media/",
+    "https://www.instagram.com/franciscorreia__/"
+  ]
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,7 +145,7 @@
 <header class="nav" id="site-nav">
   <div class="container nav__inner">
     <a href="#top" class="nav__logo" aria-label="Craft Frame Media — strona główna">
-      <img src="/assets/logo/cfm-wordmark-white.png" srcset="/assets/logo/cfm-wordmark-white.png 600w, /assets/logo/cfm-wordmark-white@2x.png 1200w" sizes="140px" alt="Craft Frame Media" width="600" height="205" />
+      <img src="/assets/logo/cfm-wordmark-white.png" srcset="/assets/logo/cfm-wordmark-white.png 600w, /assets/logo/cfm-wordmark-white@2x.png 1200w" sizes="140px" alt="Logo Craft Frame Media" width="600" height="205" />
     </a>
 
     <nav class="nav__links" aria-label="Główna">
@@ -96,7 +171,7 @@
 <div class="mobile-menu" id="mobile-menu" data-open="false">
   <div class="container mobile-menu__top">
     <a href="#top" class="nav__logo" aria-label="Craft Frame Media — strona główna">
-      <img src="/assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media" width="600" height="205" style="height:26px;width:auto;" />
+      <img src="/assets/logo/cfm-wordmark-white.png" alt="Logo Craft Frame Media" width="600" height="205" style="height:26px;width:auto;" />
     </a>
     <button type="button" class="mobile-menu__close" id="burger-close" aria-label="Zamknij menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
@@ -247,7 +322,7 @@
       </div>
 
       <div class="portfolio-grid" data-video-group="festivals">
-        <a class="p-card p-card--h54 p-card--glow-a" data-video-slot="festivals/01-upperground-poland-2026" href="https://instagram.com/reel/DZ7JbQ6N3LW" target="_blank" rel="noopener noreferrer" aria-label="Upperground Poland 2026 — Aftermovie — Jun 2026 — watch on Instagram">
+        <a class="p-card p-card--h54 p-card--glow-a" data-video-slot="festivals/01-upperground-poland-2026" href="https://instagram.com/reel/DZ7JbQ6N3LW" target="_blank" rel="noopener noreferrer" aria-label="Upperground Poland 2026 — Aftermovie — Jun 2026 — obejrzyj na Instagramie">
           <video class="p-card__video" muted loop playsinline preload="none" poster="/assets/video/portfolio/festivals/01-upperground-poland-2026.jpg" data-src="/assets/video/portfolio/festivals/01-upperground-poland-2026.mp4?v=20260828c" aria-hidden="true"></video>
           <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
           <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
@@ -260,7 +335,7 @@
           </span>
         </a>
 
-        <a class="p-card p-card--h54 p-card--glow-c" data-video-slot="festivals/02-our-affairs-lisbon-2026" href="https://instagram.com/reel/DaihfidzDZ7" target="_blank" rel="noopener noreferrer" aria-label="Our Affairs Lisbon 2026 — Aftermovie — Jul 2026 — watch on Instagram">
+        <a class="p-card p-card--h54 p-card--glow-c" data-video-slot="festivals/02-our-affairs-lisbon-2026" href="https://instagram.com/reel/DaihfidzDZ7" target="_blank" rel="noopener noreferrer" aria-label="Our Affairs Lisbon 2026 — Aftermovie — Jul 2026 — obejrzyj na Instagramie">
           <video class="p-card__video" muted loop playsinline preload="none" poster="/assets/video/portfolio/festivals/02-our-affairs-lisbon-2026.jpg" data-src="/assets/video/portfolio/festivals/02-our-affairs-lisbon-2026.mp4?v=20260828c" aria-hidden="true"></video>
           <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
           <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
@@ -273,7 +348,7 @@
           </span>
         </a>
 
-        <a class="p-card p-card--v p-card--glow-b" data-video-slot="festivals/03-ultra-resistance-warsaw-2025" href="https://instagram.com/reel/DRCoWOkDJBR" target="_blank" rel="noopener noreferrer" aria-label="Ultra Resistance Warsaw 2025 — Aftermovie — Nov 2025 — watch on Instagram">
+        <a class="p-card p-card--v p-card--glow-b" data-video-slot="festivals/03-ultra-resistance-warsaw-2025" href="https://instagram.com/reel/DRCoWOkDJBR" target="_blank" rel="noopener noreferrer" aria-label="Ultra Resistance Warsaw 2025 — Aftermovie — Nov 2025 — obejrzyj na Instagramie">
           <video class="p-card__video" muted loop playsinline preload="none" poster="/assets/video/portfolio/festivals/03-ultra-resistance-warsaw-2025.jpg" data-src="/assets/video/portfolio/festivals/03-ultra-resistance-warsaw-2025.mp4?v=20260828c" aria-hidden="true"></video>
           <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
           <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
@@ -304,7 +379,7 @@
       </div>
 
       <div class="portfolio-grid" data-video-group="corporate">
-        <a class="p-card p-card--h169 p-card--glow-c" data-video-slot="corporate/01-messalka-wpp-media" href="https://instagram.com/reel/DX6MegtsTmJ" target="_blank" rel="noopener noreferrer" aria-label="Messalka Events — WPP Media event video — Warsaw — May 2026 — watch on Instagram">
+        <a class="p-card p-card--h169 p-card--glow-c" data-video-slot="corporate/01-messalka-wpp-media" href="https://instagram.com/reel/DX6MegtsTmJ" target="_blank" rel="noopener noreferrer" aria-label="Messalka Events — WPP Media event video — Warsaw — May 2026 — obejrzyj na Instagramie">
           <video class="p-card__video" muted loop playsinline preload="none" poster="/assets/video/portfolio/corporate/01-messalka-wpp-media.jpg" data-src="/assets/video/portfolio/corporate/01-messalka-wpp-media.mp4?v=20260828c" aria-hidden="true"></video>
           <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
           <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
@@ -317,7 +392,7 @@
           </span>
         </a>
 
-        <a class="p-card p-card--v p-card--glow-a" data-video-slot="corporate/02-eventslife-eu-nepi-rockcastle" href="https://instagram.com/reel/DX6L0E1MQ6y" target="_blank" rel="noopener noreferrer" aria-label="Eventslife EU — NEPI Rockcastle event video — Warsaw — May 2026 — watch on Instagram">
+        <a class="p-card p-card--v p-card--glow-a" data-video-slot="corporate/02-eventslife-eu-nepi-rockcastle" href="https://instagram.com/reel/DX6L0E1MQ6y" target="_blank" rel="noopener noreferrer" aria-label="Eventslife EU — NEPI Rockcastle event video — Warsaw — May 2026 — obejrzyj na Instagramie">
           <video class="p-card__video" muted loop playsinline preload="none" poster="/assets/video/portfolio/corporate/02-eventslife-eu-nepi-rockcastle.jpg" data-src="/assets/video/portfolio/corporate/02-eventslife-eu-nepi-rockcastle.mp4?v=20260828c" aria-hidden="true"></video>
           <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
           <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
@@ -330,7 +405,7 @@
           </span>
         </a>
 
-        <a class="p-card p-card--v p-card--glow-b" data-video-slot="corporate/03-daybreak-pl-red-night" href="https://instagram.com/reel/DX6M5NnMOpQ" target="_blank" rel="noopener noreferrer" aria-label="Daybreak PL — Red Night event video — Warsaw — May 2026 — watch on Instagram">
+        <a class="p-card p-card--v p-card--glow-b" data-video-slot="corporate/03-daybreak-pl-red-night" href="https://instagram.com/reel/DX6M5NnMOpQ" target="_blank" rel="noopener noreferrer" aria-label="Daybreak PL — Red Night event video — Warsaw — May 2026 — obejrzyj na Instagramie">
           <video class="p-card__video" muted loop playsinline preload="none" poster="/assets/video/portfolio/corporate/03-daybreak-pl-red-night.jpg" data-src="/assets/video/portfolio/corporate/03-daybreak-pl-red-night.mp4?v=20260828c" aria-hidden="true"></video>
           <div class="frame-marks"><span></span><span></span><span></span><span></span></div>
           <span class="p-card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg></span>
@@ -454,7 +529,7 @@
   <div class="container footer__inner">
     <div class="footer__row">
       <a href="#top" class="footer__logo" aria-label="Craft Frame Media — strona główna">
-        <img src="/assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media" width="600" height="205" />
+        <img src="/assets/logo/cfm-wordmark-white.png" alt="Logo Craft Frame Media" width="600" height="205" />
       </a>
       <nav class="footer__links" aria-label="Stopka">
         <a href="/festivals/">Festiwale</a>

@@ -34,7 +34,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   "@id": "https://craft-frame-media.com/#organization",
   "name": "Craft Frame Media",
   "url": "https://craft-frame-media.com/",
@@ -50,7 +50,7 @@
     "width": 1200,
     "height": 630
   },
-  "description": "Video and photography production for electronic music festivals and corporate brand events, based in Warsaw and Lisbon.",
+  "description": "Video and photography production for electronic music festivals and for corporate and brand clients.",
   "email": "hello@craftframe-media.com",
   "foundingDate": "2021",
   "founder": {
@@ -61,25 +61,50 @@
     "@type": "ContactPoint",
     "email": "hello@craftframe-media.com",
     "contactType": "customer service",
-    "areaServed": ["PL", "PT"],
-    "availableLanguage": ["English", "Polish"]
+    "areaServed": [
+      "PL",
+      "PT"
+    ],
+    "availableLanguage": [
+      "English",
+      "Polish"
+    ]
   },
   "areaServed": [
-    { "@type": "City", "name": "Warsaw" },
-    { "@type": "City", "name": "Lisbon" }
+    {
+      "@type": "City",
+      "name": "Warsaw"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Masovian Voivodeship"
+    },
+    {
+      "@type": "City",
+      "name": "Lisbon"
+    }
   ],
   "location": [
     {
       "@type": "Place",
-      "address": { "@type": "PostalAddress", "addressLocality": "Warsaw", "addressCountry": "PL" }
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Warsaw",
+        "addressCountry": "PL"
+      }
     },
     {
       "@type": "Place",
-      "address": { "@type": "PostalAddress", "addressLocality": "Lisbon", "addressCountry": "PT" }
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lisbon",
+        "addressCountry": "PT"
+      }
     }
   ],
   "sameAs": [
-    "https://instagram.com/craft.frame.media"
+    "https://www.instagram.com/craft.frame.media/",
+    "https://www.instagram.com/franciscorreia__/"
   ]
 }
 </script>
@@ -289,7 +314,7 @@
 <header class="nav" id="site-nav">
   <div class="container nav__inner">
     <a href="#top" class="nav__logo" aria-label="Craft Frame Media — home">
-      <img src="assets/logo/cfm-wordmark-white.png" srcset="assets/logo/cfm-wordmark-white.png 600w, assets/logo/cfm-wordmark-white@2x.png 1200w" sizes="140px" alt="Craft Frame Media" width="600" height="205" />
+      <img src="assets/logo/cfm-wordmark-white.png" srcset="assets/logo/cfm-wordmark-white.png 600w, assets/logo/cfm-wordmark-white@2x.png 1200w" sizes="140px" alt="Craft Frame Media logo" width="600" height="205" />
     </a>
 
     <nav class="nav__links" aria-label="Primary">
@@ -315,7 +340,7 @@
 <div class="mobile-menu" id="mobile-menu" data-open="false">
   <div class="container mobile-menu__top">
     <a href="#top" class="nav__logo" aria-label="Craft Frame Media — home">
-      <img src="assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media" width="600" height="205" style="height:26px;width:auto;" />
+      <img src="assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media logo" width="600" height="205" style="height:26px;width:auto;" />
     </a>
     <button type="button" class="mobile-menu__close" id="burger-close" aria-label="Close menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
@@ -751,7 +776,7 @@
   <div class="container footer__inner">
     <div class="footer__row">
       <a href="#top" class="footer__logo" aria-label="Craft Frame Media — home">
-        <img src="assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media" width="600" height="205" />
+        <img src="assets/logo/cfm-wordmark-white.png" alt="Craft Frame Media logo" width="600" height="205" />
       </a>
       <nav class="footer__links" aria-label="Footer">
         <a href="/festivals/" data-i18n="nav.festivals">Festivals</a>
