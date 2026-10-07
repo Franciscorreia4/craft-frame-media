@@ -927,3 +927,105 @@
 @media (max-width: 560px) {
   .steps { grid-template-columns: 1fr; }
 }
+
+/* Click-to-play full films (YouTube facade). */
+.films {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+.film {
+  margin: 0;
+}
+.film__player {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #000;
+}
+.film__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+.film__player:hover .film__poster {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+.film__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: 0 0 0 0 var(--accent-glow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.film__play svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: 0.2rem;
+}
+.film__player:hover .film__play,
+.film__player:focus-visible .film__play {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 0 0 10px var(--accent-glow);
+}
+.film__player:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.film__time {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(10, 10, 11, 0.78);
+  color: var(--text-primary);
+  font-size: var(--text-micro);
+}
+.film__player--live iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.film__meta {
+  padding-top: var(--space-4);
+}
+.film__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lead);
+  line-height: var(--lh-snug);
+  color: var(--text-primary);
+}
+.film__desc {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--text-small);
+  line-height: var(--lh-normal);
+}
+.films__note {
+  margin-top: var(--space-5);
+  color: var(--text-tertiary);
+  font-size: var(--text-small);
+}
+@media (prefers-reduced-motion: reduce) {
+  .film__poster,
+  .film__play { transition: none; }
+  .film__player:hover .film__poster { transform: none; }
+}
