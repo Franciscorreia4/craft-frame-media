@@ -22,14 +22,11 @@
 #   youtube-nocookie.com, for the click-to-play films on the festivals and
 #   corporate pages (the iframe is only created after a visitor presses play;
 #   thumbnails are self-hosted so img-src is unchanged). Because it names that
-#   one origin instead of allowing frames generally, it still blocks the
-#   `nl-badge-frame` iframe Netlify's edge injects into
-#   every response (their "Powered by Netlify" badge), since it's an iframe
-#   in the same document our CSP header covers. That happens to double as
-#   the fix for the badge overlapping the mobile CTA button — verify after
-#   deploy that the badge is actually gone rather than just erroring in the
-#   console; if Netlify needs it exempted for some functional reason, loosen
-#   frame-src to include that badge's specific origin as well.
+#   one origin instead of allowing frames generally. Note: Netlify's own
+#   "Powered by Netlify" badge (`nl-badge-frame`) is injected as a srcdoc
+#   iframe, which frame-src does not govern, so it still appears on the live
+#   pages regardless of this directive (confirmed in the browser on 2026-10-07;
+#   an earlier version of this comment wrongly claimed 'none' was hiding it).
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
