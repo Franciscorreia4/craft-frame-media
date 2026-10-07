@@ -44,3 +44,13 @@
 # up to a year.
 /assets/video/*
   Cache-Control: public, max-age=31536000, immutable
+
+# CSS and JS are only ever referenced with a ?v=<date> suffix (in the HTML and
+# in every JS import), so each version has its own URL and can be cached for a
+# year. IMPORTANT: whenever a CSS/JS file changes, bump that suffix everywhere
+# (grep the old value in *.html and js/*.js) — otherwise returning visitors
+# keep the old file for up to a year.
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
