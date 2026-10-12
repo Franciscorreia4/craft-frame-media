@@ -1141,3 +1141,57 @@
 @media (max-width: 560px) {
   .fact { grid-template-columns: 1fr; gap: var(--space-1); }
 }
+
+/* Founder block inside the About section. */
+.founder {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+.founder__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #000;
+}
+.founder__role {
+  color: var(--accent);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+.founder__name {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: var(--lh-snug);
+  color: var(--text-primary);
+}
+.founder__title {
+  margin-top: var(--space-1);
+  color: var(--text-secondary);
+}
+.founder__bio {
+  margin-top: var(--space-4);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  max-width: 46ch;
+}
+@media (max-width: 700px) {
+  .founder { grid-template-columns: 1fr; }
+  .founder__photo { max-width: 16rem; }
+}
+#founder .founder {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
