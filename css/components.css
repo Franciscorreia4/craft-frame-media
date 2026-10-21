@@ -1195,3 +1195,27 @@
   padding-top: 0;
   border-top: 0;
 }
+
+/* Answer-first summary under a service page's H1, and the wide fact list. */
+.summary {
+  margin-top: var(--space-4);
+  max-width: 46rem;
+  color: var(--text-primary);
+  font-size: calc(var(--text-body) * 1.1);
+  font-weight: 500;
+  line-height: var(--lh-normal);
+}
+.facts--wide .fact {
+  grid-template-columns: 13rem 1fr;
+}
+.facts--wide .fact a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.facts--wide .fact a:hover {
+  color: var(--accent);
+}
+@media (max-width: 700px) {
+  .facts--wide .fact { grid-template-columns: 1fr; }
+}

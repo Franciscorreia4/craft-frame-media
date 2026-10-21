@@ -5,10 +5,10 @@
  * allows it — an inline module here was being blocked, which silently broke
  * the mobile menu and the portfolio video playback on these pages.
  */
-import { initNav } from "./nav.js?v=20261012b";
-import { initI18n } from "./i18n.js?v=20261012b";
-import { initPortfolioVideo } from "./video.js?v=20261012b";
-import { initFilmFacades } from "./yt-facade.js?v=20261012b";
+import { initNav } from "./nav.js?v=20261021a";
+import { initI18n } from "./i18n.js?v=20261021a";
+import { initPortfolioVideo } from "./video.js?v=20261021a";
+import { initFilmFacades } from "./yt-facade.js?v=20261021a";
 
 initNav();
 initI18n();
