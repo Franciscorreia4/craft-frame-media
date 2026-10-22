@@ -27,6 +27,24 @@
 #   iframe, which frame-src does not govern, so it still appears on the live
 #   pages regardless of this directive (confirmed in the browser on 2026-10-07;
 #   an earlier version of this comment wrongly claimed 'none' was hiding it).
+# - GOOGLE ADS (not active yet — js/consent.js is dormant until GOOGLE_ADS_ID is set).
+#   When activating, add these sources to the CSP below. They were found by
+#   running the real tag with a dummy ID against this exact policy and fixing
+#   every violation until the console was clean, including a test conversion:
+#     script-src  += https://www.googletagmanager.com https://googleads.g.doubleclick.net
+#                    https://www.googleadservices.com https://www.google.com
+#     connect-src += https://www.google-analytics.com https://*.google-analytics.com
+#                    https://*.analytics.google.com https://*.googletagmanager.com
+#                    https://www.google.com https://www.googleadservices.com
+#                    https://googleads.g.doubleclick.net https://ad.doubleclick.net
+#                    https://stats.g.doubleclick.net
+#                    + regional Google domains (conversion pings go through the visitor's
+#                    country domain): https://www.google.pl .pt .de .co.uk .es .fr .it .nl .ie
+#     img-src     += https://www.google.com https://googleads.g.doubleclick.net
+#                    https://ad.doubleclick.net https://*.g.doubleclick.net
+#                    https://www.googletagmanager.com + the same regional domains
+#   A CSP cannot wildcard a country domain, so if ads target another country and the
+#   console shows a blocked https://www.google.<tld>, add that domain too.
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

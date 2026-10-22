@@ -169,11 +169,11 @@
 <link rel="preload" href="https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGIInHWVyNJ.woff2" as="font" type="font/woff2" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="/css/tokens.css?v=20261021a" />
-<link rel="stylesheet" href="/css/base.css?v=20261021a" />
-<link rel="stylesheet" href="/css/layout.css?v=20261021a" />
-<link rel="stylesheet" href="/css/components.css?v=20261021a" />
-<link rel="stylesheet" href="/css/responsive.css?v=20261021a" />
+<link rel="stylesheet" href="/css/tokens.css?v=20261022a" />
+<link rel="stylesheet" href="/css/base.css?v=20261022a" />
+<link rel="stylesheet" href="/css/layout.css?v=20261022a" />
+<link rel="stylesheet" href="/css/components.css?v=20261022a" />
+<link rel="stylesheet" href="/css/responsive.css?v=20261022a" />
 <script defer src="https://cloud.umami.is/script.js" data-website-id="30ee32dc-2335-4894-932d-a7748142ba1b"></script>
 </head>
 <body>
@@ -465,12 +465,53 @@
   </section>
 
   <!-- ============================== CTA ============================== -->
-  <section class="section contact">
+  <section class="section contact" id="quote">
     <div class="container">
       <p class="eyebrow">Get in touch</p>
       <h2 class="contact__title">Let's shoot something <em>worth watching.</em></h2>
       <p class="contact__subtext">Tell us about your festival, aftermovie, or artist reel and we'll get back to you fast.</p>
-      <a href="/#contact" class="btn btn--primary">Start a project</a>
+      <div class="quote">
+        <form class="quote__form" name="quote-request" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" data-quote-form data-thanks="/thanks/">
+          <input type="hidden" name="form-name" value="quote-request" />
+          <input type="hidden" name="page" value="" />
+          <input type="hidden" name="utm_source" value="" />
+          <input type="hidden" name="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" value="" />
+          <p class="quote__hp" hidden><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="quote__row">
+            <label class="quote__field" for="q-name"><span>Name</span>
+              <input id="q-name" name="name" type="text" autocomplete="name" required /></label>
+            <label class="quote__field" for="q-email"><span>Email</span>
+              <input id="q-email" name="email" type="email" autocomplete="email" required /></label>
+          </div>
+          <div class="quote__row">
+            <label class="quote__field" for="q-type"><span>Type of event</span>
+              <select id="q-type" name="event-type" required>
+                <option value="" selected disabled>Choose…</option>
+            <option value="Festival or club event">Festival or club event</option>
+            <option value="Corporate or brand event">Corporate or brand event</option>
+            <option value="Social or brand content">Social or brand content</option>
+            <option value="Something else">Something else</option>
+              </select></label>
+            <label class="quote__field" for="q-date"><span>Event date <i>(optional)</i></span>
+              <input id="q-date" name="event-date" type="text" placeholder="e.g. 14 June, or “summer 2027”" /></label>
+          </div>
+          <div class="quote__row">
+            <label class="quote__field" for="q-city"><span>City <i>(optional)</i></span>
+              <input id="q-city" name="city" type="text" placeholder="e.g. Warsaw" /></label>
+            <label class="quote__field" for="q-budget"><span>Budget range <i>(optional)</i></span>
+              <input id="q-budget" name="budget" type="text" placeholder="e.g. 2,000–3,000 EUR" /></label>
+          </div>
+          <label class="quote__field" for="q-msg"><span>What do you need?</span>
+            <textarea id="q-msg" name="message" rows="5" placeholder="Tell us about the event: what it is, how many hours, and what you&#x27;d like to receive (full film, highlights, same-day edits, photos)." required></textarea></label>
+          <p class="quote__status" data-quote-status role="status" hidden></p>
+          <div class="quote__actions">
+            <button type="submit" class="btn btn--primary">Send request</button>
+            <p class="quote__notice">We reply by email. Your details are used only to answer your request — see the <a href="/privacy.html">Privacy Policy</a>.</p>
+          </div>
+        </form>
+      </div>
+      <p class="quote__alt">Prefer email? <a href="mailto:hello@craftframe-media.com" data-umami-event="email-click" data-umami-event-location="cta">hello@craftframe-media.com</a></p>
     </div>
   </section>
 </main>
@@ -498,6 +539,6 @@
   </div>
 </footer>
 
-<script type="module" src="/js/subpage.js?v=20261021a"></script>
+<script type="module" src="/js/subpage.js?v=20261022a"></script>
 </body>
 </html>
