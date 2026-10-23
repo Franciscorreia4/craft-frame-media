@@ -1375,3 +1375,31 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* Photo gallery on case studies: justified rows, every photo uncropped.
+   Each item grows in proportion to its aspect ratio (--ar), so photos in a
+   row end up the same height whatever their orientation. */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  max-width: 64rem;
+  margin-top: var(--space-4);
+}
+/* The 19rem base makes two landscape photos fill the first row and pushes
+   the portraits onto a row of their own at desktop widths. */
+.gallery__item {
+  margin: 0;
+  flex: calc(var(--ar) * 100) 1 calc(var(--ar) * 19rem);
+}
+@media (max-width: 700px) {
+  .gallery__item { flex-basis: calc(var(--ar) * 12rem); }
+}
+.gallery__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+}

@@ -9,7 +9,7 @@
  *
  * Nothing the visitor typed is ever sent to analytics — only the event type.
  */
-import { trackConversion } from "./consent.js?v=20261022a";
+import { trackConversion } from "./consent.js?v=20261023a";
 
 const FLAG = "cfm-quote-sent";
 const UTM = ["utm_source", "utm_medium", "utm_campaign"];
