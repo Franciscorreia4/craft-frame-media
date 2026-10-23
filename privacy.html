@@ -17,11 +17,11 @@
 <link rel="preload" href="https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGIInHWVyNJ.woff2" as="font" type="font/woff2" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="css/tokens.css?v=20261023a" />
-<link rel="stylesheet" href="css/base.css?v=20261023a" />
-<link rel="stylesheet" href="css/layout.css?v=20261023a" />
-<link rel="stylesheet" href="css/components.css?v=20261023a" />
-<link rel="stylesheet" href="css/responsive.css?v=20261023a" />
+<link rel="stylesheet" href="css/tokens.css?v=20261023b" />
+<link rel="stylesheet" href="css/base.css?v=20261023b" />
+<link rel="stylesheet" href="css/layout.css?v=20261023b" />
+<link rel="stylesheet" href="css/components.css?v=20261023b" />
+<link rel="stylesheet" href="css/responsive.css?v=20261023b" />
 <script defer src="https://cloud.umami.is/script.js" data-website-id="30ee32dc-2335-4894-932d-a7748142ba1b"></script>
 </head>
 <body>
@@ -76,7 +76,7 @@
     <div class="container" style="max-width: 46rem;">
       <p class="eyebrow">Legal</p>
       <h1 class="section__title">Privacy Policy</h1>
-      <p style="color: var(--text-secondary); margin-top: var(--space-3);">Last updated: October 22, 2026</p>
+      <p style="color: var(--text-secondary); margin-top: var(--space-3);">Last updated: October 23, 2026</p>
 
       <div style="margin-top: var(--space-8); color: var(--text-secondary); line-height: 1.7;">
         <p>Craft Frame Media ("we", "us") produces video and photography for events and brands. This page explains what personal data this website collects and how it's handled.</p>
@@ -88,10 +88,14 @@
         <p>This site uses <a href="https://umami.is" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Umami</a>, a privacy-focused analytics tool, to see how many people visit and which pages they look at. It doesn't use cookies or any persistent identifier, and it can't be used to identify you individually — it only reports aggregate numbers (like "how many visits this week"), the same way any visitor could observe traffic to a public page. It also records when the email links in the Contact section are clicked, when the play button on one of the films is pressed, and when a quote request is sent, each as a single count with no information about who clicked and nothing of what was typed.</p>
 
         <h2 style="font-family: var(--font-display); font-size: var(--text-h3); color: var(--text-primary); margin-top: var(--space-8); margin-bottom: var(--space-3);">What this site does <em>not</em> do</h2>
-        <p>Beyond the analytics above, this site runs no advertising trackers and sets no cookies of its own (the YouTube player, if you choose to play a film, is covered below). The only place it collects personal details is the quote-request form described below.</p>
+        <p>Beyond the analytics above, this site runs no advertising trackers and sets no cookies unless you press <strong>Accept</strong> in the cookie banner (see “Advertising measurement” below). The YouTube player, if you choose to play a film, is covered below too. The only place the site collects personal details is the quote-request form described below.</p>
 
         <h2 style="font-family: var(--font-display); font-size: var(--text-h3); color: var(--text-primary); margin-top: var(--space-8); margin-bottom: var(--space-3);">What it does store</h2>
-        <p>The only thing this site saves in your browser is your English/Polish language choice, kept in <code>localStorage</code> on your own device so the site remembers it next time you visit. It's never transmitted anywhere and isn't a cookie.</p>
+        <p>The site keeps your answer to the cookie banner in your browser's <code>localStorage</code>, so it doesn't ask you again. While you browse, the quote form also keeps any campaign tags from the link you arrived through in <code>sessionStorage</code>, which is cleared when you close the tab, so they can be included if you send a request. Neither is a cookie, and neither is sent anywhere on its own.</p>
+
+        <h2 style="font-family: var(--font-display); font-size: var(--text-h3); color: var(--text-primary); margin-top: var(--space-8); margin-bottom: var(--space-3);">Advertising measurement (Google Ads)</h2>
+        <p>We may advertise this site on Google. If you press <strong>Accept</strong> in the cookie banner, we load Google's advertising tag (Google Ads). It can set cookies or similar identifiers on your device and tells Google which pages you view here and, if you send a quote request, that a request was sent — so we can see whether our ads lead to enquiries. What you type in the form is never sent to Google.</p>
+        <p>If you press <strong>Reject</strong>, or don't choose, nothing from Google Ads is loaded. You can change your choice at any time with <strong>Cookie settings</strong> at the bottom of every page. Google processes this data under its own privacy policy.</p>
 
         <h2 style="font-family: var(--font-display); font-size: var(--text-h3); color: var(--text-primary); margin-top: var(--space-8); margin-bottom: var(--space-3);">Third-party services this site loads</h2>
         <p>Loading this page requests resources from a few outside services, each of which sees your IP address and basic request metadata (standard for any web request) when it's called:</p>
@@ -100,6 +104,7 @@
           <li><strong style="color: var(--text-primary);">Umami Cloud</strong> — collects the anonymous visit/click analytics described above.</li>
           <li><strong style="color: var(--text-primary);">Google Fonts</strong> — serves the typefaces used on this site.</li>
           <li><strong style="color: var(--text-primary);">cdnjs (Cloudflare)</strong> — serves the animation library (GSAP) used for scroll effects.</li>
+          <li><strong style="color: var(--text-primary);">Google Ads (Google)</strong> — only if you accept the cookie banner; measures whether our ads lead to quote requests, as described above.</li>
           <li><strong style="color: var(--text-primary);">YouTube (Google)</strong> — only after you press play on one of the films on the Festivals or Events / Corporate pages; the player is loaded from youtube-nocookie.com and, once playing, may store cookies or similar data on your device under Google's own policy. Nothing is requested from YouTube until you press play.</li>
         </ul>
         <p>None of these are configured by us to track you across other sites. If you'd rather not make these requests at all, most browsers let you block third-party requests, though parts of the site (fonts, scroll animations, analytics, embedded films) won't work as intended.</p>
@@ -145,6 +150,6 @@
   </div>
 </footer>
 
-<script type="module" src="/js/subpage.js?v=20261023a"></script>
+<script type="module" src="/js/subpage.js?v=20261023b"></script>
 </body>
 </html>

@@ -11,15 +11,17 @@
  *  - The choice is kept in localStorage; a "Cookie settings" link in the footer
  *    re-opens the banner so consent can be withdrawn as easily as it was given.
  *
- * It stays dormant (no banner, no Google code) until GOOGLE_ADS_ID is filled in.
- * To activate: set the two constants below, add Google's domains to the
- * Content-Security-Policy in _headers (see the comment there), update the
- * privacy page, bump the ?v= cache-bust, deploy.
+ * With GOOGLE_ADS_ID empty it stays dormant (no banner, no Google code).
+ * Consent Mode v2: ad_storage, ad_user_data, ad_personalization and
+ * analytics_storage are declared "denied" by default and "granted" on Accept.
+ * The tag is only ever loaded after Accept, and for returning visitors who
+ * already accepted it waits for the page's load event so it can't compete
+ * with the hero video for LCP.
  *
  * Preview the banner at any time with ?cookie-preview=1 (loads nothing).
  */
-const GOOGLE_ADS_ID = ""; // e.g. "AW-1234567890"
-const CONVERSION_LABEL = ""; // e.g. "AbC-D_efG-h12345" — the label of the "quote request" conversion action
+const GOOGLE_ADS_ID = "AW-18532663261";
+const CONVERSION_LABEL = "C9okCIfI-qYdEN3_h4VF"; // "Quote request" conversion action
 
 const STORAGE_KEY = "cfm-consent-v1";
 const preview = () => new URLSearchParams(location.search).has("cookie-preview");
@@ -70,7 +72,7 @@ function loadGoogleTag() {
     ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", analytics_storage: "denied",
   });
   gtag("consent", "update", {
-    ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted",
+    ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted", analytics_storage: "granted",
   });
   const s = document.createElement("script");
   s.async = true;
@@ -92,12 +94,24 @@ function clearGoogleCookies() {
   });
 }
 
-/** Fire the "quote request" conversion — only if the visitor accepted and the tag is configured. */
+let pendingConversion = false;
+
+function fireConversion() {
+  if (!CONVERSION_LABEL) return;
+  loadGoogleTag(); // no-op if already loaded; events queue in dataLayer until gtag.js arrives
+  gtag("event", "conversion", { send_to: `${GOOGLE_ADS_ID}/${CONVERSION_LABEL}` });
+}
+
+/**
+ * Called once by the thank-you page for a real form submission.
+ * Accepted → fire now. No choice yet → hold it and fire if the visitor accepts
+ * on this page. Rejected → nothing goes to Google.
+ */
 export function trackConversion() {
-  if (!active() || readChoice() !== "granted" || !window.gtag) return;
-  if (CONVERSION_LABEL) {
-    window.gtag("event", "conversion", { send_to: `${GOOGLE_ADS_ID}/${CONVERSION_LABEL}` });
-  }
+  if (!active()) return;
+  const choice = readChoice();
+  if (choice === "granted") fireConversion();
+  else if (choice === null) pendingConversion = true;
 }
 
 function buildBanner() {
@@ -132,13 +146,14 @@ function showBanner() {
       saveChoice(choice);
       if (choice === "granted") {
         loadGoogleTag();
+        if (pendingConversion) { pendingConversion = false; fireConversion(); }
       } else if (before === "granted") {
         clearGoogleCookies();
         location.reload(); // unloads the tag
       }
     });
   });
-  banner.querySelector("[data-consent]").focus();
+  banner.querySelector("[data-consent]").focus({ preventScroll: true });
 }
 
 function addFooterLink() {
@@ -159,8 +174,12 @@ export function initConsent() {
   if (active()) {
     addFooterLink();
     const choice = readChoice();
-    if (choice === "granted") loadGoogleTag();
-    else if (choice !== "denied") showBanner();
+    if (choice === "granted") {
+      // Already accepted on an earlier visit: load after the page has finished
+      // loading so the tag never competes with the page's own content.
+      if (document.readyState === "complete") loadGoogleTag();
+      else window.addEventListener("load", loadGoogleTag, { once: true });
+    } else if (choice !== "denied") showBanner();
   } else {
     showBanner(); // ?cookie-preview=1 — look only, nothing is stored or loaded
   }

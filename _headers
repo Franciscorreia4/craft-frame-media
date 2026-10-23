@@ -27,8 +27,8 @@
 #   iframe, which frame-src does not govern, so it still appears on the live
 #   pages regardless of this directive (confirmed in the browser on 2026-10-07;
 #   an earlier version of this comment wrongly claimed 'none' was hiding it).
-# - GOOGLE ADS (not active yet — js/consent.js is dormant until GOOGLE_ADS_ID is set).
-#   When activating, add these sources to the CSP below. They were found by
+# - GOOGLE ADS (active since 2026-10-23; the tag loads only after cookie consent).
+#   These sources are in the CSP below. They were found by
 #   running the real tag with a dummy ID against this exact policy and fixing
 #   every violation until the console was clean, including a test conversion:
 #     script-src  += https://www.googletagmanager.com https://googleads.g.doubleclick.net
@@ -50,7 +50,7 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-mTJ4cJaTm2Gw95GeXEpZdvEEY9ybh6FZu1bwcNE7QlY=' https://cdnjs.cloudflare.com https://cloud.umami.is; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://gateway.umami.is; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-mTJ4cJaTm2Gw95GeXEpZdvEEY9ybh6FZu1bwcNE7QlY=' https://cdnjs.cloudflare.com https://cloud.umami.is https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.google.pl https://www.google.pt https://www.google.de https://www.google.co.uk https://www.google.es https://www.google.fr https://www.google.it https://www.google.nl https://www.google.ie https://googleads.g.doubleclick.net https://ad.doubleclick.net https://*.g.doubleclick.net https://www.googletagmanager.com; media-src 'self'; connect-src 'self' https://gateway.umami.is https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://stats.g.doubleclick.net https://www.google.pl https://www.google.pt https://www.google.de https://www.google.co.uk https://www.google.es https://www.google.fr https://www.google.it https://www.google.nl https://www.google.ie; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'
 
 # Long-lived immutable caching for video assets — these are large background
 # loops that change rarely; Netlify's default is

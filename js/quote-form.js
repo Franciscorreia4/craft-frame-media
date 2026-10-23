@@ -2,14 +2,14 @@
  * Quote-request form (Netlify Forms) and the thank-you page tracking.
  *
  * The form posts in the background and, on success, sends the visitor to the
- * thank-you page (/thanks/ or /pl/thanks/). That page is the clean "conversion":
+ * thank-you page (/thanks/ or /pl/dziekujemy/). That page is the clean "conversion":
  * it fires one Umami event and — if the visitor accepted ad cookies — one
  * Google Ads conversion. Without JavaScript the form still works: it posts
  * normally and Netlify shows the same thank-you page.
  *
  * Nothing the visitor typed is ever sent to analytics — only the event type.
  */
-import { trackConversion } from "./consent.js?v=20261023a";
+import { trackConversion } from "./consent.js?v=20261023b";
 
 const FLAG = "cfm-quote-sent";
 const UTM = ["utm_source", "utm_medium", "utm_campaign"];

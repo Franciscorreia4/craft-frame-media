@@ -10,8 +10,11 @@
 export function initI18n() {
   const path = location.pathname.endsWith("/") ? location.pathname : location.pathname + "/";
   const isPlPage = path === "/pl/" || path.startsWith("/pl/");
-  const enPath = isPlPage ? path.slice(3) : path;
-  const plPath = "/pl" + enPath;
+  // Pages whose Polish twin has its own name (everything else is "/pl" + the English path).
+  const PL_NAMES = { "/thanks/": "/pl/dziekujemy/" };
+  const EN_NAMES = Object.fromEntries(Object.entries(PL_NAMES).map(([en, pl]) => [pl, en]));
+  const enPath = isPlPage ? (EN_NAMES[path] || path.slice(3)) : path;
+  const plPath = PL_NAMES[enPath] || "/pl" + enPath;
 
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
     const lang = btn.getAttribute("data-lang-btn");
